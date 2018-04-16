@@ -1,0 +1,201 @@
+{C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity processor
+-- Compiling architecture processorArch of processor
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/DecodeStage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/DecodeStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity DecodeStage
+-- Compiling architecture DecodeStageArch of DecodeStage
+-- Loading package NUMERIC_STD
+-- Loading entity RegisterFile
+-- Loading entity ControlUnit
+-- Loading entity nbitregister
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ram
+-- Compiling architecture syncrama of ram
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/InterruptHandlingModule.vhd} {0 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/InterruptHandlingModule.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+** Error (suppressible): C:/Users/Univ/Documents/Architecture2/New folder/InterruptHandlingModule.vhd(2): (vcom-1491) Empty source files.
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity outPortController
+-- Compiling architecture outPortControllerArch of outPortController
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tristateBuffer
+-- Compiling architecture arcTristate of tristateBuffer
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/InstructionMemory.vhd} {0 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/InstructionMemory.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+** Error (suppressible): C:/Users/Univ/Documents/Architecture2/New folder/InstructionMemory.vhd(2): (vcom-1491) Empty source files.
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ForwardingUnit
+-- Compiling architecture ForwardingUnitArch of ForwardingUnit
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity MemoryStage
+-- Compiling architecture MemoryStageArch of MemoryStage
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PCController
+-- Compiling architecture PCControllerArch of PCController
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/register.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/register.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity nbitregister
+-- Compiling architecture nbitregister_architecture of nbitregister
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd} {0 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Compiling entity RegisterFile
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(5): (vcom-1136) Unknown identifier "std_logic".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(7): (vcom-1136) Unknown identifier "std_logic".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(8): (vcom-1136) Unknown identifier "std_logic".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(10): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(11): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(12): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(13): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(15): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(16): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(18): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(19): (vcom-1136) Unknown identifier "std_logic_vector".
+** Error: C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile.vhd(23): VHDL Compiler exiting
+
+} {5.0 17.0} {}} {C:/Users/Univ/Documents/Architecture2/New folder/BranchUnit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/BranchUnit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity BranchUnit
+-- Compiling architecture BranchUnitArch of BranchUnit
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/decoder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/decoder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity decoder
+-- Compiling architecture decoderArchitecture of decoder
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/ExecutionStage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/ExecutionStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ExecuteStage
+-- Compiling architecture ExecuteStageArch of ExecuteStage
+-- Loading entity outPortController
+-- Loading entity nbitregisterf
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity nbitregisterf
+-- Compiling architecture nbitregister_architecture of nbitregisterf
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity WBStage
+-- Compiling architecture WBStageArch of WBStage
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/ControlUnit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/ControlUnit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ControlUnit
+-- Compiling architecture ControlUnitArch of ControlUnit
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/ALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/ALU.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ALU
+-- Compiling architecture ALUArch of ALU
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Mux2
+-- Compiling architecture Mux2Arch of Mux2
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FetchStage
+-- Compiling architecture FetchStageArch of FetchStage
+-- Loading entity nbitregister
+-- Loading package NUMERIC_STD
+-- Loading entity PCController
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Mux4
+-- Compiling architecture Mux4Arch of Mux4
+
+} {} {}} {C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RegisterFile
+-- Compiling architecture RegisterFileArch of RegisterFile
+
+} {} {}}
