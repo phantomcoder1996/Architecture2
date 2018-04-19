@@ -55,9 +55,11 @@ else input1+1 when opcode="10011" or opcode="01110" or opcode="11010"or opcode="
 else input1-1 when (opcode="10100" or opcode="01101" or opcode ="11001");--DEC --push -- call
 
 
+
+
 output1<=std_logic_vector(input1) when (opcode/="01000" AND opcode="10011" AND  opcode="10100" AND (opcode="01001") AND( opcode="01010"));
      
-
+--output2 always equal to output except in cases of shift left ,shift right
 output2<=std_logic_vector(output) when (opcode/="01000" AND opcode/="01001"  AND opcode/="01010")
      else std_logic_vector(q sll to_integer(d))when(opcode="01001") ----SHIFT LEFT
      else std_logic_vector(q srl to_integer(d))when( opcode="01010"); -----SHIFT RIGHT
@@ -73,9 +75,11 @@ TempCarry<= Flags(2) when opcode="01000" or opcode="00111";
 --------------------over flow flag----------------------------------------------------
  Flags(0)<= '1' when ((output(15) /= output(16) or multiply(33) /= multiply(32)) AND opcode/="01001"  AND opcode/="01010")
                 else '1' when (opcode="01001"  or opcode="01010" ) AND (output2(15) /= output2(16))
+                else Flags(0) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001" or opcode="01001" or opcode="01010"
                 else '0';  
 ---------------------Zero flag------------------------------------------------------
  Flags(3)<='1' when (output = "0000000000000000") or (multiply= (multiply'range => '0'))
+   else Flags(0) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001"or opcode="01001" or opcode="01010"
     ELSE '0';
 --------------------Neg flag---------------------------------------------------------
  Flags(1)<='1' when (output< (output'range => '0')) or (multiply < (multiply'range => '0'))
@@ -85,6 +89,7 @@ Flags(2)<= ALUSrc2(0) when opcode="01000"
 else    ALUSrc2(15) when opcode="00111"
 else  '1'when  opcode="01011"
 else  output(16) when opcode="00010" or  (opcode="00100")  or opcode="10011" or opcode="10100"
+else Flags(0) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001" or opcode="01001" or opcode="01010"
 else '0';
 ---------------------------------------------------------------------------------------------
 
