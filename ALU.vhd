@@ -84,9 +84,8 @@ TempCarry<= Flags(2) when opcode="01000" or opcode="00111";
 Flags(2)<= ALUSrc2(0) when opcode="01000"
 else    ALUSrc2(15) when opcode="00111"
 else  '1'when  opcode="01011"
-else  '0' when opcode="01100"
-else 
-output(16) ;
+else  output(16) when opcode="00010" or  (opcode="00100")  or opcode="10011" or opcode="10100"
+else '0';
 ---------------------------------------------------------------------------------------------
 
  ALURes1<= ALUSrc1 when opcode ="00001" -----MOv
