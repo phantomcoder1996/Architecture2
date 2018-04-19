@@ -36,6 +36,7 @@ signal localflow:std_logic;
 signal d,q: unsigned(16 downto 0);
 constant zeros : std_logic_vector(16 downto 0) := (others => '0');
 constant zeross : std_logic_vector(33 downto 0) := (others => '0');
+SIGNAL BRANCHZERO,BRANCHN,BRACHC :std_logic;
 begin
 
 --TODO: akeed m3roofa bs matenseesh elsigned operations
@@ -46,6 +47,19 @@ d<=unsigned('0'&ALUSrc2);
 z1<=resize(signed(zeros),17);
 z2<=resize(signed(zeross),34);
 input2<= resize(signed(ALUSrc2),17); --dst
+
+
+
+BRANCHZERO <= '1' when (opcode="10101") and (Flags(3)='1')
+else '0';
+
+BRANCHN<= '1' when opcode="10110" and Flags(1)='1'
+else '0';
+
+BRACHC<= '1' when opcode="10111"and Flags(2)='1'
+else '0';
+
+
 
 output<=input1+input2 when opcode="00010"  -----ADD
 else -input1+input2 when(opcode="00100")--SUB
@@ -75,21 +89,23 @@ TempCarry<= Flags(2) when opcode="01000" or opcode="00111";
 --------------------over flow flag----------------------------------------------------
  Flags(0)<= '1' when ((output(15) /= output(16) or multiply(33) /= multiply(32)) AND opcode/="01001"  AND opcode/="01010")
                 else '1' when (opcode="01001"  or opcode="01010" ) AND (output2(15) /= output2(16))
-                else Flags(0) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001" or opcode="01001" or opcode="01010"
+                else Flags(0) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001" or opcode="01001" or opcode="01010" or opcode="11000" or opcode="11000" or opcode="11001" or opcode="11001" or opcode="11010" or opcode="11011" or opcode="10101" or opcode="10110" or opcode="10111"
                 else '0';  
 ---------------------Zero flag------------------------------------------------------
  Flags(3)<='1' when (output = "0000000000000000") or (multiply= (multiply'range => '0'))
-   else Flags(0) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001"or opcode="01001" or opcode="01010"
+   else Flags(3) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001"or opcode="01001" or opcode="01010" or opcode="11000" or BRANCHZERO/='1' or opcode="11000" or opcode="11001" or opcode="11010" or opcode="11011" or opcode="10110" or opcode="10111"
     ELSE '0';
 --------------------Neg flag---------------------------------------------------------
  Flags(1)<='1' when (output< (output'range => '0')) or (multiply < (multiply'range => '0'))
+    else Flags(1) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001" or opcode="01001" or opcode="01010" or opcode="11000" or BRANCHN/='1' or opcode="11000" or opcode="11001" or opcode="11010" or opcode="11011" or opcode="10111" or opcode="10101"
+
      ELSE  '0';
 -------------------carry flag--------------------------------------------------------------
 Flags(2)<= ALUSrc2(0) when opcode="01000"
 else    ALUSrc2(15) when opcode="00111"
 else  '1'when  opcode="01011"
 else  output(16) when opcode="00010" or  (opcode="00100")  or opcode="10011" or opcode="10100"
-else Flags(0) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001" or opcode="01001" or opcode="01010"
+else Flags(2) when  opcode="01101" or opcode ="11001" or opcode="01110" or opcode="11010"or opcode="11011" or  opcode ="00001" or opcode="01001" or opcode="01010" or opcode="11000" or BRACHC/='1' or opcode="11000" or opcode="10101" or opcode="10110" or opcode="11001" or opcode="11010" or opcode="11011"
 else '0';
 ---------------------------------------------------------------------------------------------
 
