@@ -51,8 +51,8 @@ output<=input1+input2 when opcode="00010"  -----ADD
 else -input1+input2 when(opcode="00100")--SUB
 else  input1 AND input2 when (opcode="00101")--AND
 else input1 OR input2 when(opcode="00110")---OR
-else input1+1 when opcode="10011"--INC
-else input1-1 when opcode="10100";--DEC
+else input1+1 when opcode="10011" or opcode="01110" or opcode="11010"or opcode="11011"--INC --pop -- return --return 1
+else input1-1 when (opcode="10100" or opcode="01101" or opcode ="11001");--DEC --push -- call
 
 
 output1<=std_logic_vector(input1) when (opcode/="01000" AND opcode="10011" AND  opcode="10100" AND (opcode="01001") AND( opcode="01010"));
@@ -91,14 +91,14 @@ output(16) ;
 
  ALURes1<= ALUSrc1 when opcode ="00001" -----MOv
   else not ALUSrc2 when (opcode="10001") -----NOT
-  else output2(15 downto 0) when opcode="01001"  or opcode="01010"
-  else output2(16)&output2(14 downto 0)    when opcode="00010" or (opcode="00100")   --ADD
+  else output2(15 downto 0) when opcode="01001"  or opcode="01010" --sll -srl
+  else output2(16)&output2(14 downto 0)    when opcode="00010" or (opcode="00100") or opcode="10011" or opcode="10100"   --ADD -SUB --INC --DEC
   else MULOUT(15 downto 0) when (opcode="00011")--Mul
-  else output2(15 downto 0) when (opcode="00101") or (opcode="00110") 
-  else TempCarry & ALUSrc2(14 downto 0) when opcode="01000"
-  else ALUSrc2(15 downto 1)& TempCarry when opcode="00111"
-  else  output2(16)&output2(14 downto 0) when  opcode="10011"
-  else output2(16)&output2(14 downto 0);
+  else output2(15 downto 0) when (opcode="00101") or (opcode="00110") --AND  --OR 
+  else TempCarry & ALUSrc2(14 downto 0) when opcode="01000"--shift with carry
+  else ALUSrc2(15 downto 1)& TempCarry when opcode="00111"; --shift with carry
+ -- else  output2(16)&output2(14 downto 0) when    --INC DEC 
+ -- else output2(16)&output2(14 downto 0);
 
 
 
@@ -106,6 +106,7 @@ output(16) ;
 ALURes2<= 
 --output1(15 downto 0) when opcode/="00011"  
   MULOUT(31 downto 16) when(opcode="00011")
+  else  output2(16)&output2(14 downto 0) when opcode="01110" or opcode="01101"  or opcode="11010"or opcode="11011" or opcode ="11001"--PUSH POP call return return1;
   else (others => '0');
  --else ALUSrc1 when opcode="00001";
 
