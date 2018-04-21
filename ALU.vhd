@@ -59,6 +59,12 @@ CONSTANT SHLOP:std_logic_vector(4 downto 0) := "01001";
 CONSTANT SHROP:std_logic_vector(4 downto 0) := "01010";
 CONSTANT RETIOP:std_logic_vector(4 downto 0) :="11011";
 CONSTANT PUSHOP:std_logic_vector(4 downto 0) :="01101";
+CONSTANT NOOP:std_logic_vector(4 downto 0) :="00000";
+CONSTANT LDDOP:std_logic_vector(4 downto 0) :="11101";
+CONSTANT LDMOP:std_logic_vector(4 downto 0) :="11100";
+CONSTANT OUTOP:std_logic_vector(4 downto 0) :="01111";
+CONSTANT INOP:std_logic_vector(4 downto 0) :="10000";
+CONSTANT STDOP:std_logic_vector(4 downto 0) :="11110";
 begin
 
 --TODO: akeed m3roofa bs matenseesh elsigned operations
@@ -88,7 +94,8 @@ else -input1+input2 when(opcode=SUBOP)--SUB
 else  input1 AND input2 when (opcode=ANDOP)--AND
 else input1 OR input2 when(opcode=OROP)---OR
 else input1+1 when opcode=INCOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP--INC --pop -- return --return 1
-else input1-1 when (opcode=DECOP or opcode=PUSHOP or opcode =CALLOP);--DEC --push -- call
+else input1-1 when (opcode=DECOP or opcode=PUSHOP or opcode =CALLOP)--DEC --push -- call
+else (others => '0');
 
 
 
@@ -98,36 +105,38 @@ else input1-1 when (opcode=DECOP or opcode=PUSHOP or opcode =CALLOP);--DEC --pus
 --output2 always equal to output except in cases of shift left ,shift right
 output2<=std_logic_vector(output) when (opcode/=MULOP AND opcode/=SHLOP  AND opcode/=SHROP AND opcode/=SHRCOP AND opcode/=SHLCOP)
      else std_logic_vector(q sll to_integer(d))when(opcode=SHLOP) ----SHIFT LEFT
-     else std_logic_vector(q srl to_integer(d))when( opcode=SHROP); -----SHIFT RIGHT
+     else std_logic_vector(q srl to_integer(d))when( opcode=SHROP) -----SHIFT RIGHT
+     else (others => '0');
 
 
 multiply<= input1*input2 when(opcode=MULOP);
 
 MULOUT<=std_logic_vector(multiply) when (opcode=MULOP) ;
 
-TempCarry<= Flags(2) when opcode=SHRCOP or opcode="00111";
+TempCarry<= Flags(2) when opcode=SHRCOP or opcode=SHLCOP;
 
 
 --------------------over flow flag----------------------------------------------------
  Flags(0)<= '1' when ((output(15) /= output(16) or multiply(33) /= multiply(32)) AND opcode/=SHLOP  AND opcode/=SHROP)
                 else '1' when (opcode=SHLOP  or opcode=SHROP ) AND (output2(15) /= output2(16))
-                else Flags(0) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP    or opcode=RETOP or opcode=RETIOP or opcode=JMPZOP or opcode=JMPNOP or opcode=JMPCOP
+                else Flags(0) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP   or opcode=JMPZOP or opcode=JMPNOP or opcode=JMPCOP or opcode=NOOP or opcode=LDDOP or opcode=LDMOP or opcode=OUTOP or opcode=INOP or opcode=STDOP
                 else '0';  
 ---------------------Zero flag------------------------------------------------------
  Flags(3)<='1' when (output = "0000000000000000") or (multiply= (multiply'range => '0'))
-   else Flags(3) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or BRANCHZERO/='1'    or opcode=JMPNOP or opcode=JMPCOP
+   else Flags(3) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or BRANCHZERO/='1'    or opcode=JMPNOP or opcode=JMPCOP or opcode=NOOP or opcode=LDDOP or opcode=LDMOP or opcode=OUTOP or opcode=INOP or opcode=STDOP
+
     ELSE '0';
 --------------------Neg flag---------------------------------------------------------
  Flags(1)<='1' when (output< (output'range => '0')) or (multiply < (multiply'range => '0'))
-    else Flags(1) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or BRANCHN/='1'  or opcode= JMPCOP or opcode=JMPZOP
+    else Flags(1) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or BRANCHN/='1'  or opcode= JMPCOP or opcode=JMPZOP or opcode=NOOP or opcode=LDDOP or opcode=LDMOP or opcode=OUTOP or opcode=INOP or opcode=STDOP
 
      ELSE  '0';
 -------------------carry flag--------------------------------------------------------------
 Flags(2)<= ALUSrc2(0) when opcode=SHRCOP
-else    ALUSrc2(15) when opcode="00111"
-else  '1'when  opcode="01011"
+else    ALUSrc2(15) when opcode=SHLCOP
+else  '1'when  opcode="01011" --set carry
 else  output(16) when opcode=ADDOP or  (opcode=SUBOP)  or opcode=INCOP or opcode=DECOP
-else Flags(2) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or BRACHC/='1' or opcode=JMPZOP or opcode=JMPNOP 
+else Flags(2) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or BRACHC/='1' or opcode=JMPZOP or opcode=JMPNOP  or opcode=NOOP or opcode=LDDOP or opcode=LDMOP or opcode=OUTOP or opcode=INOP or opcode=STDOP
 else '0';
 ---------------------------------------------------------------------------------------------
 
@@ -138,7 +147,8 @@ else '0';
   else MULOUT(15 downto 0) when (opcode=MULOP)--Mul
   else output2(15 downto 0) when (opcode=ANDOP) or (opcode=OROP) --AND  --OR 
   else TempCarry & ALUSrc2(14 downto 0) when opcode=SHRCOP--shift with carry
-  else ALUSrc2(15 downto 1)& TempCarry when opcode="00111"; --shift with carry
+  else ALUSrc2(15 downto 1)& TempCarry when opcode=SHLCOP --shift with carry
+  else (others => '0');
  -- else  output2(16)&output2(14 downto 0) when    --INC DEC 
  -- else output2(16)&output2(14 downto 0);
 

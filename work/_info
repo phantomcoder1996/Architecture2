@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA_pro/17.0
 Ealu
-Z0 w1524166120
+Z0 w1524310164
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ VbZD8:mm<=N^@Ahn2>OYTi3
 !s100 XFgI?i6lTHEC:Rl79zRI_3
 Z7 OV;C;10.5c;63
 32
-Z8 !s110 1524166150
+Z8 !s110 1524310167
 !i10b 1
-Z9 !s108 1524166150.000000
+Z9 !s108 1524310167.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|R:/Architecture2/ALU.vhd|
 Z11 !s107 R:/Architecture2/ALU.vhd|
 !i113 1
@@ -35,10 +35,10 @@ R1
 R2
 R3
 Z14 DEx4 work 3 alu 0 22 bZD8:mm<=N^@Ahn2>OYTi3
-l62
+l68
 L29
-VkE9`_5T:`M1_:CHAi[Oj[3
-!s100 TBCMd31QIeABm^Z4N29BB3
+V?D=lEBZhScP_ZbjlL3T>41
+!s100 fiSMIUmYXPZ=`zAo4B9e@2
 R7
 32
 R8
