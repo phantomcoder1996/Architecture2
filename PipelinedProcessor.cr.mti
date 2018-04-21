@@ -1,4 +1,13 @@
-R:/Architecture2/BranchUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/BranchUnit.vhd
+R:/Architecture2/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ALU.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ALU
+-- Compiling architecture ALUArch of ALU
+
+} {} {}} R:/Architecture2/BranchUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/BranchUnit.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO

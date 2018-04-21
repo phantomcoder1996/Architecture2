@@ -10,7 +10,7 @@ rst: in std_logic;
 
 DecodeExecute: in std_logic_vector(54 downto 0);
 
-inCtrlSignals: in std_logic_vector(14 downto 0);
+inCtrlSignals: in std_logic_vector(15 downto 0);
 
 --opcode	     : in std_logic_vector(4 downto 0); --needed to check if the instuction in execute is out instruction
 --this could also be determined from iowrite but not sure;
@@ -19,16 +19,18 @@ ExMemRsrcV   : in std_logic_vector(15 downto 0); --Src multiplexer output in mem
 WriteBack    : in std_logic_vector(31 downto 0);  --maps to WriteBack Register from 38 down to 7
 x	     : in std_logic_vector(14 downto 0); --input from forwarding unit
 fetchDecodeOpcode: in std_logic_vector(4 downto 0); --passed from decode stage for branch unit
+FlagsReg: in std_logic_vector(3 downto 0);
+FlagsREGOUT:out std_logic_vector(3 downto 0);
 --Output represents execution results as well as ctrl signals
 
 
 outCtrlSignals: out std_logic_vector(12 downto 0);
-ExecuteMemory:  out std_logic_vector(64 downto 0);
+ExecuteMemory:  out std_logic_vector(85 downto 0);
 OutportOutput: out std_logic_vector(15 downto 0);
 
 --Output from branch unit
-branch	     : out std_logic;
-flush	     : out std_logic
+branch	     : inout std_logic;
+flush	     : inout std_logic
 
 
 
@@ -61,10 +63,71 @@ Signal WBSrcData    :  std_logic_vector(15 downto 0);  --src data in WB buffers
 --TODO: write all input ctrlsigs as shown
 ---------------------------------------------
 Signal IoWr		: std_logic;
-
+SIGNAL DEXMUX          : std_logic;     --shr shl ldm
+SIGNAL EXMEMMUX        : std_logic;     -- push std out 
+SIGNAL MEMIO            : std_logic_vector(2 downto 0);   -- 00 rd mem-- 01 wr mem --10 rd IO --11 wr IO
+SIGNAL  SELSRC          :std_logic; --push pop ret reti call
+SIGNAL  SELDST          :std_logic_vector(1 downto 0); -- 00 in --01 any alu --10 ldd/pop  -- 11 LDM
+SIGNAL  JMPS            :std_logic_vector(2 downto 0); -- 00 jmp --01 jz --10 jn  -- 11 jc
+SIGNAL CALLRET         :std_logic_vector(1 downto 0); --10 call 01 ret
+SIGNAL WBB             :std_logic_vector(2 downto 0); -- src dst dst hazard
 
 Signal OutportInput	: std_logic_vector(15 downto 0);
+-----------------------
+--Signal  ALU
+Signal FlagsALU: std_logic_vector(3 downto 0);
+Signal ALURES1: std_logic_vector(15 downto 0);
+Signal ALURES2: std_logic_vector(15 downto 0);
+SIGNAL ALURSRC:std_logic_vector(15 downto 0);
+SIGNAL ALUDEST:std_logic_vector(15 downto 0);
+SIGNAL ALUEN: std_logic;
+----------------------------------------------------------------------------
+----Signal for selecting src and dst
 
+SIgnal sel1DST,sel2DST,sel3DST,sel4DST: std_logic;
+SIGNAL sel1SRC,sel2SRC,sel3SRC,sel4SRC:std_logic;
+SIGNAL RsrcVMux1,RsrcVMux2,RsrcVMux3:std_logic_vector(15 downto 0);
+SIGNAL  RdstVMUX2,RdstVMUX1,RdstVMUX3:std_logic_vector(15 downto 0);
+
+------------------------------------------------------
+
+-------------control Signals ------------------------------------
+constant ANDOP: std_logic_vector(4 downto 0) := "00101";
+constant SHLCOP: std_logic_vector(4 downto 0) := "00111";
+constant SHRCOP: std_logic_vector(4 downto 0) := "01000";
+constant OROP: std_logic_vector(4 downto 0) := "00110";
+constant CALLOP: std_logic_vector(4 downto 0) := "11001";
+constant MOVOP: std_logic_vector(4 downto 0) := "00001";
+constant NOTOP: std_logic_vector(4 downto 0) := "10001";
+constant DECOP: std_logic_vector(4 downto 0) := "10100";
+constant INCOP: std_logic_vector(4 downto 0) := "10011";
+constant ADDOP: std_logic_vector(4 downto 0) := "00010";
+constant SUBOP: std_logic_vector(4 downto 0) := "00100";
+constant MULOP: std_logic_vector(4 downto 0) := "00011";
+constant JMPOP: std_logic_vector(4 downto 0) := "11000";
+constant JMPCOP: std_logic_vector(4 downto 0) := "10111";
+constant JMPNOP: std_logic_vector(4 downto 0) := "10110";
+constant JMPZOP: std_logic_vector(4 downto 0) := "10101";
+CONSTANT POPOP:std_logic_vector(4 downto 0) := "01110";
+CONSTANT RETOP:std_logic_vector(4 downto 0) := "11010";
+CONSTANT SHLOP:std_logic_vector(4 downto 0) := "01001";
+CONSTANT SHROP:std_logic_vector(4 downto 0) := "01010";
+CONSTANT RETIOP:std_logic_vector(4 downto 0) :="11011";
+CONSTANT PUSHOP:std_logic_vector(4 downto 0) :="01101";
+CONSTANT NOOP:std_logic_vector(4 downto 0) :="00000";
+CONSTANT LDDOP:std_logic_vector(4 downto 0) :="11101";
+CONSTANT LDMOP:std_logic_vector(4 downto 0) :="11100";
+CONSTANT OUTOP:std_logic_vector(4 downto 0) :="01111";
+CONSTANT INOP:std_logic_vector(4 downto 0) :="10000";
+CONSTANT STDOP:std_logic_vector(4 downto 0) :="11110";
+-------------------------------------------------
+SIGNAL opc:std_logic_vector(4 downto 0);
+-----signal for branch
+SIGNAL BR:std_logic;
+
+
+
+----------------------------
 begin
 
 --Signals coming from WriteBack Stage
@@ -88,8 +151,17 @@ opcode		<= DecodeExecute(4 downto 0);
 -----------------------------
 
 --ToDo: Write decoding of in ctrl signals as shown
+DEXMUX   <=   inCtrlSignals(0);        --shr shl ldm
+EXMEMMUX  <=   inCtrlSignals(1);       -- push std out 
+MEMIO     <=   inCtrlSignals(4 downto 2);       -- 00 rd mem-- 01 wr mem --10 rd IO --11 wr IO
+SELSRC    <=     inCtrlSignals(5);  --push pop ret reti call
+SELDST     <=     inCtrlSignals(7 downto 6); -- 00 in --01 any alu --10 ldd/pop  -- 11 LDM
+JMPS       <=     inCtrlSignals(10 downto 8); -- 00 jmp --01 jz --10 jn  -- 11 jc
+CALLRET    <= inCtrlSignals(12 downto 11);--10 call 01 ret
+WBB           <=inCtrlSignals(15 downto 13); -- src dst dst hazard
+IoWr		<= '1' when MEMIO(1 downto 0)="11"
+ else '0';
 
-IoWr		<= inCtrlSignals(0); --change the index it is not correct
 
 
 --Output port and its Controller
@@ -97,23 +169,55 @@ IoWr		<= inCtrlSignals(0); --change the index it is not correct
 OutputPortController:entity work.outPortController port map(RsrcV,ExMemRdstV,ExMemRsrcV,WBDstData,WBSrcData,x,outPortInput );
 Outputport          :entity work.nbitregisterf port map(outPortInput,rst,clk,IOWr,OutportOutput);
 
+----------------------------------------------------
 
 --TODO: Add Alu and its signals
 ---------------------------------
-
+ALUEN<='1' when opcode=ANDOP or  opcode=SHLCOP or opcode=SHRCOP or opcode=OROP or opcode=NOTOP  or opcode=DECOP or opcode=ADDOP or opcode=SUBOP or opcode=MULOP 
+else '0';
+opcode <="00000" when BR='1'
+else opcode;
+ALUUnit :entity work.ALU port map(ALURSRC,ALUDEST,opcode,ALUEN,ALURES1,ALURES2,FlagsALU);
+FlagsREGOUT<=FlagsALU;
 
 --TODO: Add muxes at src and dst values of alu
 -----------------------------------------------
+sel1SRC<=x(4);
+sel2SRC<=x(8) or x(11);
+sel3SRC<=x(11);
+sel4SRC<=x(1) or x(8) or x(11) or x(4);
+RsrcVMux1<=ExMemRdstV when sel1SRC='0'
+else ExMemRsrcV;
+RsrcVMux2<= WBDstData when sel3SRC='0'
+else WBSrcData;
+RsrcVMux3<=RsrcVMux2 when sel2SRC='1'
+else RsrcVMux1;
+ALURSRC<= RsrcV when sel4SRC='0'
+else RsrcVMux3;
 
 
+----------------------------
+sel1DST<=x(3);
+sel2DST<=x(2)or x(3);
+sel3DST<=x(10);
+sel4DST<= x(2)or x(3)or x(9)or x(10);
+RdstVMUX2<= WBSrcData when sel3DST='1'
+else WBDstData;
+RdstVMUX1 <= ExMemRdstV when sel1DST='0'
+else ExMemRsrcV;
+RdstVMUX3<=RdstVMUX1 when sel2DST='0'
+else RdstVMUX2;
+ALUDEST<= RdstV when sel4DST='0'
+else RdstVMUX3;
 
 --TODO: Add Execute Memory register Its output is 65 bits and is declared in entity declaration above
 --------------------------------------------------------------------------------------------------------
 
-
+ExecuteMemory<= incrementedPC& ALURES2& ALURES1 & RdstV & Rsrc & Rdst & opcode & inCtrlSignals & intIndicator;
 
 --TODO: Add branch unit here make sure that the opcode you pass to branch unit is fetchDecodeOpcode in entity declaration
 --------------------------------------------------------------------------------------------------------------------------------
-
+BranchUnit: entity work.BranchUnit port map(fetchDecodeOpcode,ALUEN,FlagsALU,FlagsReg,branch,flush);
+BR<=branch;
 
 end ExecuteStageArch;
