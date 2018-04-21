@@ -212,7 +212,7 @@ R45
 R12
 R13
 Eexecutestage
-Z48 w1524320484
+Z48 w1524321820
 R2
 R3
 R4
@@ -224,9 +224,9 @@ VKW?6I358OS`PjJ;[kH6TC3
 !s100 K9Xl1<O`nBj@GKnYcnoL<2
 R7
 32
-Z51 !s110 1524320486
+Z51 !s110 1524321823
 !i10b 1
-Z52 !s108 1524320485.000000
+Z52 !s108 1524321823.000000
 Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|R:/Architecture2/ExecutionStage.vhd|
 Z54 !s107 R:/Architecture2/ExecutionStage.vhd|
 !i113 1
@@ -240,11 +240,11 @@ Z55 DEx4 work 13 nbitregisterf 0 22 ?dgMDKAeDe>cnmiJhH<6<0
 Z56 DEx4 work 17 outportcontroller 0 22 K<ki8]KY4kZfPIHOAD8_@3
 R2
 R3
-DEx4 work 12 executestage 0 22 KW?6I358OS`PjJ;[kH6TC3
-l131
+Z57 DEx4 work 12 executestage 0 22 KW?6I358OS`PjJ;[kH6TC3
+l132
 L42
-V_E8FG^AT`5PET`NUbo_2Z0
-!s100 =od9d@4RFBnB0i@LZP<6]3
+Vl=5m;lJ5<P6ROjEk4e:kN3
+!s100 @kHj=jDcT?EX[RmzG9c9B0
 R7
 32
 R51
@@ -256,29 +256,29 @@ R54
 R12
 R13
 Efetchstage
-Z57 w1523916551
+Z58 w1523916551
 R2
 R3
 R24
-Z58 8C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd
-Z59 FC:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd
+Z59 8C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd
+Z60 FC:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd
 l0
 L4
 VhDOQc]faj1jL]BVAB0<>32
 !s100 aECBi9Mb8<R2g0iaFVjE53
 R7
 32
-Z60 !s110 1523917126
+Z61 !s110 1523917126
 !i10b 1
-Z61 !s108 1523917126.000000
-Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd|
-Z63 !s107 C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd|
+Z62 !s108 1523917126.000000
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd|
+Z64 !s107 C:/Users/Univ/Documents/Architecture2/New folder/FetchStage.vhd|
 !i113 1
 R12
 R13
 Afetchstagearch
 R1
-Z64 DEx4 work 12 pccontroller 0 22 MeJ>@40:h>IP5oLQaB87H1
+Z65 DEx4 work 12 pccontroller 0 22 MeJ>@40:h>IP5oLQaB87H1
 R46
 R2
 R3
@@ -289,21 +289,21 @@ V=>I3LGSHb38:W<:m?:QXR3
 !s100 ^5aWaCXoJT>gZ;[m7VEER1
 R7
 32
-R60
-!i10b 1
 R61
+!i10b 1
 R62
 R63
+R64
 !i113 1
 R12
 R13
 Eforwardingunit
-Z65 w1523917069
+Z66 w1523917069
 R2
 R3
 R24
-Z66 8C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd
-Z67 FC:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd
+Z67 8C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd
+Z68 FC:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd
 l0
 L5
 V9K>ZB9cS^HNa]Sl3F>EC12
@@ -313,8 +313,8 @@ R7
 R27
 !i10b 1
 R28
-Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd|
-Z69 !s107 C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd|
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd|
+Z70 !s107 C:/Users/Univ/Documents/Architecture2/New folder/ForwardingUnit.vhd|
 !i113 1
 R12
 R13
@@ -331,29 +331,29 @@ R7
 R27
 !i10b 1
 R28
-R68
 R69
+R70
 !i113 1
 R12
 R13
 Ememorystage
-Z70 w1523909338
+Z71 w1523909338
 R2
 R3
 R24
-Z71 8C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd
-Z72 FC:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd
+Z72 8C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd
+Z73 FC:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd
 l0
 L4
 V`eZg:XSKkEA8n:eT_YOGN2
 !s100 i5nl?[<BIWEcH3GMIeMlB3
 R7
 32
-R60
-!i10b 1
 R61
-Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd|
-Z74 !s107 C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd|
+!i10b 1
+R62
+Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd|
+Z75 !s107 C:/Users/Univ/Documents/Architecture2/New folder/MemoryStage.vhd|
 !i113 1
 R12
 R13
@@ -367,11 +367,11 @@ V7fCN61z:iT^`^1UgXaYb23
 !s100 B`MoHH5`B32c=K87eT3N12
 R7
 32
-R60
-!i10b 1
 R61
-R73
+!i10b 1
+R62
 R74
+R75
 !i113 1
 R12
 R13
@@ -380,8 +380,8 @@ R32
 R2
 R3
 R24
-Z75 8C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd
-Z76 FC:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd
+Z76 8C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd
+Z77 FC:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd
 l0
 L4
 V[nVBCPAczd<@ffdllcCbl0
@@ -391,8 +391,8 @@ R7
 R35
 !i10b 1
 R36
-Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd|
-Z78 !s107 C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd|
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd|
+Z79 !s107 C:/Users/Univ/Documents/Architecture2/New folder/mux2.vhd|
 !i113 1
 R12
 R13
@@ -409,8 +409,8 @@ R7
 R35
 !i10b 1
 R36
-R77
 R78
+R79
 !i113 1
 R12
 R13
@@ -419,19 +419,19 @@ R32
 R2
 R3
 R24
-Z79 8C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd
-Z80 FC:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd
+Z80 8C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd
+Z81 FC:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd
 l0
 L5
 Vd__c?[VmkUjNfd?FMiIPm3
 !s100 jAMPln9JLn;2Qf1zUAaG:1
 R7
 32
-Z81 !s110 1523917129
+Z82 !s110 1523917129
 !i10b 1
 R36
-Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd|
-Z83 !s107 C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd|
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd|
+Z84 !s107 C:/Users/Univ/Documents/Architecture2/New folder/mux4.vhd|
 !i113 1
 R12
 R13
@@ -445,11 +445,11 @@ VjOS?9[h24MS`jl4mXmXOi1
 !s100 1czliz7d3]Vd=^kh^IIP]1
 R7
 32
-R81
+R82
 !i10b 1
 R36
-R82
 R83
+R84
 !i113 1
 R12
 R13
@@ -458,19 +458,19 @@ R32
 R2
 R3
 R24
-Z84 8C:/Users/Univ/Documents/Architecture2/New folder/register.vhd
-Z85 FC:/Users/Univ/Documents/Architecture2/New folder/register.vhd
+Z85 8C:/Users/Univ/Documents/Architecture2/New folder/register.vhd
+Z86 FC:/Users/Univ/Documents/Architecture2/New folder/register.vhd
 l0
 L4
 V7ajjWMKL2IQJ;YgCCB2<Z2
 !s100 EEThZ6J92o=GZ@@<7[lj22
 R7
 32
-R81
+R82
 !i10b 1
-Z86 !s108 1523917129.000000
-Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/register.vhd|
-Z88 !s107 C:/Users/Univ/Documents/Architecture2/New folder/register.vhd|
+Z87 !s108 1523917129.000000
+Z88 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/register.vhd|
+Z89 !s107 C:/Users/Univ/Documents/Architecture2/New folder/register.vhd|
 !i113 1
 R12
 R13
@@ -484,32 +484,32 @@ V<W6=g1gzW>M@ZM;>1MmOh0
 !s100 TjCk_k?7SfF55I6b:KbCC3
 R7
 32
-R81
+R82
 !i10b 1
-R86
 R87
 R88
+R89
 !i113 1
 R12
 R13
 Enbitregisterf
-Z89 w1523856084
+Z90 w1523856084
 R2
 R3
 R24
-Z90 8C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd
-Z91 FC:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd
+Z91 8C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd
+Z92 FC:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd
 l0
 L4
 V?dgMDKAeDe>cnmiJhH<6<0
 !s100 0][<9UWkFc^^gJERU[]fj2
 R7
 32
-Z92 !s110 1523917130
+Z93 !s110 1523917130
 !i10b 1
-Z93 !s108 1523917130.000000
-Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd|
-Z95 !s107 C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd|
+Z94 !s108 1523917130.000000
+Z95 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd|
+Z96 !s107 C:/Users/Univ/Documents/Architecture2/New folder/FallingEdgeReg.vhd|
 !i113 1
 R12
 R13
@@ -523,32 +523,32 @@ VAMjbJZInP>YKf]OazJY790
 !s100 5hWAX`iBFJ^HD;4>iABA?2
 R7
 32
-R92
-!i10b 1
 R93
+!i10b 1
 R94
 R95
+R96
 !i113 1
 R12
 R13
 Eoutportcontroller
-Z96 w1523902907
+Z97 w1523902907
 R2
 R3
 R24
-Z97 8C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd
-Z98 FC:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd
+Z98 8C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd
+Z99 FC:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd
 l0
 L5
 VK<ki8]KY4kZfPIHOAD8_@3
 !s100 ;15P1Nm2:o6HaWRbM5G9B0
 R7
 32
-R92
-!i10b 1
 R93
-Z99 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd|
-Z100 !s107 C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd|
+!i10b 1
+R94
+Z100 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd|
+Z101 !s107 C:/Users/Univ/Documents/Architecture2/New folder/outPortController.vhd|
 !i113 1
 R12
 R13
@@ -562,22 +562,22 @@ VhQRTEMa72@3jGj5g4=YJT1
 !s100 K5n=C_G9lTC]zNd@X_2o?3
 R7
 32
-R92
-!i10b 1
 R93
-R99
+!i10b 1
+R94
 R100
+R101
 !i113 1
 R12
 R13
 Epccontroller
-Z101 w1523741204
+Z102 w1523741204
 R1
 R2
 R3
 R24
-Z102 8C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd
-Z103 FC:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd
+Z103 8C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd
+Z104 FC:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd
 l0
 L6
 VMeJ>@40:h>IP5oLQaB87H1
@@ -587,8 +587,8 @@ R7
 R35
 !i10b 1
 R36
-Z104 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd|
-Z105 !s107 C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd|
+Z105 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd|
+Z106 !s107 C:/Users/Univ/Documents/Architecture2/New folder/PCContoller.vhd|
 !i113 1
 R12
 R13
@@ -596,7 +596,7 @@ Apccontrollerarch
 R1
 R2
 R3
-R64
+R65
 l56
 L33
 VbcHz[]0[6>82TIMl2UGkX0
@@ -606,18 +606,18 @@ R7
 R35
 !i10b 1
 R36
-R104
 R105
+R106
 !i113 1
 R12
 R13
 Eprocessor
-Z106 w1523914037
+Z107 w1523914037
 R2
 R3
 R24
-Z107 8C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd
-Z108 FC:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd
+Z108 8C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd
+Z109 FC:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd
 l0
 L4
 V8:L8_5Q2=k@JJIF0df7h43
@@ -627,8 +627,8 @@ R7
 R35
 !i10b 1
 R36
-Z109 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd|
-Z110 !s107 C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd|
+Z110 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd|
+Z111 !s107 C:/Users/Univ/Documents/Architecture2/New folder/Processor.vhd|
 !i113 1
 R12
 R13
@@ -645,8 +645,8 @@ R7
 R35
 !i10b 1
 R36
-R109
 R110
+R111
 !i113 1
 R12
 R13
@@ -656,19 +656,19 @@ R1
 R2
 R3
 R24
-Z111 8C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd
-Z112 FC:/Users/Univ/Documents/Architecture2/New folder/ram.vhd
+Z112 8C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd
+Z113 FC:/Users/Univ/Documents/Architecture2/New folder/ram.vhd
 l0
 L5
 VJ4eW0Pz@5^TI>9YI:E=<;2
 !s100 PXEbdbP5LRQT2M:e::_@_3
 R7
 32
-R81
+R82
 !i10b 1
-R86
-Z113 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd|
-Z114 !s107 C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd|
+R87
+Z114 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd|
+Z115 !s107 C:/Users/Univ/Documents/Architecture2/New folder/ram.vhd|
 !i113 1
 R12
 R13
@@ -683,33 +683,33 @@ VG_1<RFkRfi=>P3UKjOLIQ3
 !s100 mg]hmW8]>2N=KT;HMCVd[2
 R7
 32
-R81
+R82
 !i10b 1
-R86
-R113
+R87
 R114
+R115
 !i113 1
 R12
 R13
 Eregisterfile
-Z115 w1523917116
+Z116 w1523917116
 R1
 R2
 R3
 R24
-Z116 8C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd
-Z117 FC:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd
+Z117 8C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd
+Z118 FC:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd
 l0
 L5
 VB?joaU8Nh1OT4T4MWGFQ;2
 !s100 lAKPn^mPH<4ao<ld0FFZI3
 R7
 32
-R81
+R82
 !i10b 1
-R86
-Z118 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd|
-Z119 !s107 C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd|
+R87
+Z119 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd|
+Z120 !s107 C:/Users/Univ/Documents/Architecture2/New folder/RegisterFile2.vhd|
 !i113 1
 R12
 R13
@@ -724,32 +724,32 @@ VEAAkB<_A<>`@09BXkMHh90
 !s100 3YJNO_L^nHW?^BVLEcgE[2
 R7
 32
-R81
+R82
 !i10b 1
-R86
-R118
+R87
 R119
+R120
 !i113 1
 R12
 R13
 Etristatebuffer
-Z120 w1513630478
+Z121 w1513630478
 R2
 R3
 R24
-Z121 8C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd
-Z122 FC:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd
+Z122 8C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd
+Z123 FC:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd
 l0
 L4
 V6>oL3n6R0>[MR2]f0FgB40
 !s100 SBZ[Q2jfz7>F4jkF6c]UJ1
 R7
 32
-R92
-!i10b 1
 R93
-Z123 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd|
-Z124 !s107 C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd|
+!i10b 1
+R94
+Z124 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd|
+Z125 !s107 C:/Users/Univ/Documents/Architecture2/New folder/tristatebuffer.vhd|
 !i113 1
 R12
 R13
@@ -763,21 +763,21 @@ VZNL?U7iLCdg868;njjmBP1
 !s100 FDH1RC0;97QinJ4;1bA4L2
 R7
 32
-R92
-!i10b 1
 R93
-R123
+!i10b 1
+R94
 R124
+R125
 !i113 1
 R12
 R13
 Ewbstage
-Z125 w1523908163
+Z126 w1523908163
 R2
 R3
 R24
-Z126 8C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd
-Z127 FC:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd
+Z127 8C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd
+Z128 FC:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd
 l0
 L4
 V9?QM2iGfGV;[cQ6a@:VA73
@@ -787,8 +787,8 @@ R7
 R27
 !i10b 1
 R28
-Z128 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd|
-Z129 !s107 C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd|
+Z129 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd|
+Z130 !s107 C:/Users/Univ/Documents/Architecture2/New folder/WriteBackStage.vhd|
 !i113 1
 R12
 R13
@@ -805,8 +805,8 @@ R7
 R27
 !i10b 1
 R28
-R128
 R129
+R130
 !i113 1
 R12
 R13

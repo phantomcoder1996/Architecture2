@@ -125,7 +125,8 @@ SIGNAL opc:std_logic_vector(4 downto 0);
 -----signal for branch
 SIGNAL BR:std_logic;
 
-
+-----
+SIGNAL ROUT:std_logic_vector(15 downto 0);
 
 ----------------------------
 begin
@@ -212,8 +213,9 @@ else RdstVMUX3;
 
 --TODO: Add Execute Memory register Its output is 65 bits and is declared in entity declaration above
 --------------------------------------------------------------------------------------------------------
-
-ExecuteMemory<= incrementedPC& ALURES2& ALURES1 & RdstV & Rsrc & Rdst & opcode & inCtrlSignals & intIndicator;
+ROUT<=ALURES2 when opcode= PUSHOP or opcode= STDOP or  opcode= OUTOP or DEXMUX='1'
+else RsrcV;
+ExecuteMemory<= incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst & opcode & inCtrlSignals & intIndicator;
 
 --TODO: Add branch unit here make sure that the opcode you pass to branch unit is fetchDecodeOpcode in entity declaration
 --------------------------------------------------------------------------------------------------------------------------------
