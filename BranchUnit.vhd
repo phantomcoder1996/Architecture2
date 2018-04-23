@@ -49,7 +49,7 @@ else '0';
 BRANCHN<= '1' when opcode="10110" and FlagtoBeused(1)='1'
 else '0';
 
-BRACHC<= '1' when opcode="10111"and FlagtoBeused(3)='1'
+BRACHC<= '1' when opcode="10111"and FlagtoBeused(2)='1'
 else '0';
 
 flush<= BRANCHH or BRANCHZERO or BRANCHN or BRACHC or call or Ret;
