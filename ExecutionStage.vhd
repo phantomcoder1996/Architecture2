@@ -10,7 +10,7 @@ rst: in std_logic;
 
 DecodeExecute: in std_logic_vector(54 downto 0);
 
-inCtrlSignals: in std_logic_vector(14 downto 0);
+inCtrlSignals: in std_logic_vector(15 downto 0);
 
 --opcode	     : in std_logic_vector(4 downto 0); --needed to check if the instuction in execute is out instruction
 --this could also be determined from iowrite but not sure;

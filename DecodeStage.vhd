@@ -23,7 +23,7 @@ PortInput	: in std_logic_vector(15 downto 0);
 
 --Output represents decoding results and control signals
 ----------------------------------------------------------
-CtrlSignals : out std_logic_vector(14 downto 0);
+CtrlSignals : out std_logic_vector(15 downto 0);
 decodedDstD : out std_logic_vector(15 downto 0); --Decoded data required for branching and will be needed by fetch stage
 DecodeExecute: out std_logic_vector(54 downto 0);
 
