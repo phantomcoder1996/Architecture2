@@ -73,7 +73,7 @@ SIGNAL CALLRET         :std_logic_vector(1 downto 0); --10 call 01 ret
 SIGNAL WBB             :std_logic_vector(2 downto 0); -- src dst dst hazard
 
 Signal OutportInput	: std_logic_vector(15 downto 0);
-Signal ExMemIN          :  std_logic_vector(85 downto 0);
+Signal ExMemIN          :  std_logic_vector(86 downto 0);
 -----------------------
 --Signal  ALU
 Signal FlagsALU: std_logic_vector(3 downto 0);
@@ -224,7 +224,11 @@ ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>87) port map(ExMe
 BranchUnit: entity work.BranchUnit port map(fetchDecodeOpcode,ALUEN,FlagsALU,FlagsReg,branch,flush);
 BR<=branch;
 
+<<<<<<< HEAD
 
 ----------------------------
 
 end ExecuteStageArch;
+=======
+end ExecuteStageArch;
+>>>>>>> 0599a8f14e05b7009566c2f20dd5fcfddd0ae7d3

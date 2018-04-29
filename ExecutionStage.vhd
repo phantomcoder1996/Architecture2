@@ -225,6 +225,9 @@ BranchUnit: entity work.BranchUnit port map(fetchDecodeOpcode,ALUEN,FlagsALU,Fla
 BR<=branch;
 
 
+
 ----------------------------
 
 end ExecuteStageArch;
+
+

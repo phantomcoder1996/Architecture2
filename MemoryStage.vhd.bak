@@ -9,7 +9,7 @@ rst: in std_logic;
 
 ExecuteMemory: in std_logic_vector(64 downto 0);
 MemWBRDst    : in std_logic_vector(15 downto 0); --forwarded from write back stage
-inctrlSignals: in std_logic_vector(12 downto 0);
+inctrlSignals: in std_logic_vector(12 downto 0); --not sure from the number (reem and mariam should tell me about their signals (hager)
 x: in std_logic_vector(14 downto 0); --Output from forwarding unit
 
 
@@ -18,11 +18,11 @@ x: in std_logic_vector(14 downto 0); --Output from forwarding unit
 outCtrlSignals: out std_logic_vector(2 downto 0);
 
 MemoryData: out std_logic_vector( 15 downto 0);--Data to be written in data memory
-Address:    out std_logic_vector( 15 downto 0); --Address of data memory
+Address:    out std_logic_vector( 9 downto 0); --Address of data memory
 
 AluOut1:out std_logic_vector(15 downto 0);
 AluOut2: out std_logic_vector(15 downto 0);
-Immediate:out std_logic_vector(15 downto 0); --immediate data to be written back
+Immediate:out std_logic_vector(15 downto 0) --immediate data to be written back
 
 );
 

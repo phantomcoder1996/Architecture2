@@ -27,7 +27,7 @@ CtrlSignals : out std_logic_vector(14 downto 0);
 decodedDstD : out std_logic_vector(15 downto 0); --Decoded data required for branching and will be needed by fetch stage
 DecodeExecute: out std_logic_vector(54 downto 0);
 
-FetchDecodeOpcode: out std_logic_vector( 4 downto 0)
+FetchDecodeOpcode: out std_logic_vector( 4 downto 0) --needed for branch unit
 
 
 

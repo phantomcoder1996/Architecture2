@@ -9,7 +9,7 @@ rst: in std_logic;
 
 ExecuteMemory: in std_logic_vector(64 downto 0);
 MemWBRDst    : in std_logic_vector(15 downto 0); --forwarded from write back stage
-inctrlSignals: in std_logic_vector(12 downto 0);
+inctrlSignals: in std_logic_vector(12 downto 0); --not sure from the number (reem and mariam should tell me about their signals->(hager)
 x: in std_logic_vector(14 downto 0); --Output from forwarding unit
 
 
