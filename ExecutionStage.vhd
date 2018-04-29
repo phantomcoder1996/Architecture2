@@ -25,7 +25,7 @@ FlagsREGOUT:out std_logic_vector(3 downto 0);
 
 
 outCtrlSignals: out std_logic_vector(12 downto 0);
-ExecuteMemory:  out std_logic_vector(85 downto 0);
+ExecuteMemory:  out std_logic_vector(86 downto 0);
 OutportOutput: out std_logic_vector(15 downto 0);
 
 --Output from branch unit
@@ -73,6 +73,7 @@ SIGNAL CALLRET         :std_logic_vector(1 downto 0); --10 call 01 ret
 SIGNAL WBB             :std_logic_vector(2 downto 0); -- src dst dst hazard
 
 Signal OutportInput	: std_logic_vector(15 downto 0);
+Signal ExMemIN          :  std_logic_vector(86 downto 0);
 -----------------------
 --Signal  ALU
 Signal FlagsALU: std_logic_vector(3 downto 0);
@@ -176,8 +177,7 @@ Outputport          :entity work.nbitregisterf port map(outPortInput,rst,clk,IOW
 ---------------------------------
 ALUEN<='1' when opcode=ANDOP or  opcode=SHLCOP or opcode=SHRCOP or opcode=OROP or opcode=NOTOP  or opcode=DECOP or opcode=ADDOP or opcode=SUBOP or opcode=MULOP 
 else '0';
-opcode <="00000" when BR='1'
-else opcode;
+
 ALUUnit :entity work.ALU port map(ALURSRC,ALUDEST,opcode,ALUEN,ALURES1,ALURES2,FlagsALU);
 FlagsREGOUT<=FlagsALU;
 
@@ -215,11 +215,16 @@ else RdstVMUX3;
 --------------------------------------------------------------------------------------------------------
 ROUT<=ALURES2 when opcode= PUSHOP or opcode= STDOP or  opcode= OUTOP or DEXMUX='1'
 else RsrcV;
-ExecuteMemory<= incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst & opcode & inCtrlSignals & intIndicator;
+ExMemIN<= incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst & opcode & inCtrlSignals & intIndicator & flush;
+ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>87) port map(ExMemIN,rst,clk,'1',ExecuteMemory);
+
 
 --TODO: Add branch unit here make sure that the opcode you pass to branch unit is fetchDecodeOpcode in entity declaration
 --------------------------------------------------------------------------------------------------------------------------------
 BranchUnit: entity work.BranchUnit port map(fetchDecodeOpcode,ALUEN,FlagsALU,FlagsReg,branch,flush);
 BR<=branch;
+
+
+----------------------------
 
 end ExecuteStageArch;

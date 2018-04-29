@@ -52,9 +52,8 @@ else '0';
 BRACHC<= '1' when opcode="10111"and FlagtoBeused(2)='1'
 else '0';
 
-flush<= BRANCHH or BRANCHZERO or BRANCHN or BRACHC or call or Ret;
-
-Branch<= BRANCHH or BRANCHZERO or BRANCHN or BRACHC or call or Ret or RETI  ;
+flush<=  Ret or RETI
+Branch<= BRANCHH or BRANCHZERO or BRANCHN or BRACHC or call   ;
 
 -----not sure------------------------------
 ---- Branch <= BRANCHH or call or Ret or  RETI or flush ;
