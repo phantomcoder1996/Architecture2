@@ -8,6 +8,7 @@ clk: in std_logic;
 rst: in std_logic;
 
 
+stall:in std_logic;
 DecodeExecute: in std_logic_vector(54 downto 0);
 
 inCtrlSignals: in std_logic_vector(11 downto 0);
@@ -25,7 +26,7 @@ FlagsREGOUT:out std_logic_vector(3 downto 0);
 
 
 outCtrlSignals: out std_logic_vector(11 downto 0);
-ExecuteMemory:  out std_logic_vector(82 downto 0);
+ExecuteMemory:  out std_logic_vector(64 downto 0);
 OutportOutput: out std_logic_vector(15 downto 0);
 
 
@@ -36,8 +37,8 @@ OutportOutput: out std_logic_vector(15 downto 0);
 
 --Output from branch unit
 branch	     : inout std_logic;
-flush	     : inout std_logic
-EXECMEMRET: out std_logic;
+flush	     : inout std_logic;
+EXECMEMRET: out std_logic
 
 
 );
@@ -79,7 +80,7 @@ SIGNAL CALLRET         :std_logic_vector(1 downto 0); --10 call 01 ret
 SIGNAL WBB             :std_logic_vector(2 downto 0); -- src dst dst hazard
 
 Signal OutportInput	: std_logic_vector(15 downto 0);
-Signal ExMemIN          :  std_logic_vector(82 downto 0);
+Signal ExMemIN          :  std_logic_vector(64 downto 0);
 -----------------------
 --Signal  ALU
 Signal FlagsALU: std_logic_vector(3 downto 0);
@@ -136,6 +137,9 @@ SIGNAL BR:std_logic;
 SIGNAL ROUT:std_logic_vector(15 downto 0);
 
 ----------------------------
+
+SIGNAL EXMEMEN: std_logic;
+--------------------
 begin
 
 --Signals coming from WriteBack Stage
@@ -220,8 +224,11 @@ else RdstVMUX3;
 --------------------------------------------------------------------------------------------------------
 ROUT<=RsrcV when  opcode= STDOP --revise design changed
 else ALURES2;
-ExMemIN<= incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst & opcode & inCtrlSignals & intIndicator & flush;
-ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>83) port map(ExMemIN,rst,clk,'1',ExecuteMemory);
+
+EXMEMEN<='1' when stall='0'
+ else '0';
+ExMemIN<= intIndicator &incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst   ;
+ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>65) port map(ExMemIN,rst,clk,'1',ExecuteMemory);
 
 
 --TODO: Add branch unit here make sure that the opcode you pass to branch unit is fetchDecodeOpcode in entity declaration

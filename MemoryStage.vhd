@@ -9,7 +9,7 @@ Port(
 clk: in std_logic;
 rst: in std_logic;
 
-ExecuteMemory: in std_logic_vector(64 downto 0);
+ExecuteMemory: in std_logic_vector(82 downto 0);
 MemWBRDst    : in std_logic_vector(15 downto 0); --forwarded from write back stage
 inctrlSignals: in std_logic_vector(12 downto 0);
 x: in std_logic_vector(14 downto 0); --Output from forwarding unit
@@ -22,13 +22,16 @@ outCtrlSignals: out std_logic_vector(2 downto 0);   ----------------------------
 MemoryData: out std_logic_vector( 15 downto 0);--Data to be written in data memory
 Address:    out std_logic_vector( 9 downto 0); --Address of data memory
 
-AluOut1:out std_logic_vector(15 downto 0);         --------------------------------------------------------------------------Ask reem
-AluOut2: out std_logic_vector(15 downto 0);        --------------------------------------------------------------------------Ask reem
-Immediate:out std_logic_vector(15 downto 0); --immediate data to be written back
+--AluOut1:out std_logic_vector(15 downto 0);         --------------------------------------------------------------------------Ask reem
+--AluOut2: out std_logic_vector(15 downto 0);        --------------------------------------------------------------------------Ask reem
+--Immediate:out std_logic_vector(15 downto 0); --immediate data to be written back
 						   --------------------------------------------------------------------------Ask reem
 
 WBSrc:out std_logic_vector(15 downto 0);
-WBDst:out std_logic_vector(15 downto 0)
+WBDst:out std_logic_vector(15 downto 0);
+RsrcVal:out std_logic_vector(2 downto 0);
+RdstVal:out std_logic_vector(2 downto 0);
+intIndicator	: out std_logic;
 
 );
 
@@ -77,7 +80,7 @@ Signal AluO1		: std_logic_vector(15 downto 0);
 Signal RdstV_imm	: std_logic_vector(15 downto 0);
 Signal Rsrc		: std_logic_vector(2 downto 0);
 Signal Rdst		: std_logic_vector(2 downto 0);
-Signal intIndicator	: std_logic;
+
 
 Signal memoryAddSEL	: std_logic_vector(1 downto 0);
 Signal memoryDataSEL	: std_logic_vector(1 downto 0);
@@ -104,6 +107,9 @@ AluO1			<= ExecuteMemory(37 downto 22);
 RdstV_imm		<= ExecuteMemory(21 downto 6);
 Rsrc			<= ExecuteMemory(5 downto 3);
 Rdst			<= ExecuteMemory(2 downto 0);
+
+RsrcVal<=Rsrc;
+RdstVal<=Rdst;
 
 --TODO: Decode in ctrlSigs here
 --------------------------------
@@ -148,7 +154,7 @@ Address <= addressMuxOUT( 9 downto 0); -----------------------------------------
 -----01=> when STD
 -----10=> when Push
 
---WE <= call or std or push --------------------------------------------------------------------------------Ask reem
+--WE <= 		 --------------------------------------------------------------------------------Ask reem
 memoryDataSEL<= "00" when else
  		"01" when else
 		"10" when else
@@ -164,7 +170,7 @@ MemoryData<= memoryOut;
 
 selSrc <= '1' when Rsrc="110" else 
 	  '0';                               --------------------------------------------------------int ask hager
-SrcMux:Mux2 port map (AluO1,AluO2_RsrcV,selSrc,WBSrc);------------------------------------------------------------Ask reem
+SrcMux:Mux2 port map (AluO2_RsrcV,AluO1,selSrc,WBSrc);------------------------------------------------------------Ask reem
 
 selDes <= "00" when else                  --------------------------------------------------------------------------------------Ask Hager
  	  "01" when else

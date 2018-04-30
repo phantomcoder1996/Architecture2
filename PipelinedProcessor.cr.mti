@@ -1,35 +1,18 @@
-R:/Architecture2/register.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/register.vhd
+R:/Architecture2/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/mux2.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity nbitregister
--- Compiling architecture nbitregister_architecture of nbitregister
+-- Compiling entity Mux2
+-- Compiling architecture Mux2Arch of Mux2
 
-} {} {}} R:/Architecture2/ControlUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ControlUnit.vhd
+} {} {}} R:/Architecture2/mux4.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/mux4.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity ControlUnit
--- Compiling architecture ControlUnitArch of ControlUnit
-
-} {} {}} R:/Architecture2/ROM.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ROM.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ROM
--- Compiling architecture my_rom of ROM
-
-} {} {}} R:/Architecture2/tristatebuffer.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/tristatebuffer.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity tristateBuffer
--- Compiling architecture arcTristate of tristateBuffer
+-- Compiling entity Mux4
+-- Compiling architecture Mux4Arch of Mux4
 
 } {} {}} R:/Architecture2/decoder.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/decoder.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -40,13 +23,24 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity decoder
 -- Compiling architecture decoderArchitecture of decoder
 
-} {} {}} R:/Architecture2/mux4.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/mux4.vhd
+} {} {}} R:/Architecture2/FetchStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/FetchStage.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity Mux4
--- Compiling architecture Mux4Arch of Mux4
+-- Compiling entity FetchStage
+-- Compiling architecture FetchStageArch of FetchStage
+-- Loading entity nbitregister
+-- Loading package NUMERIC_STD
+-- Loading entity PCController
+
+} {} {}} R:/Architecture2/ControlUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ControlUnit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ControlUnit
+-- Compiling architecture ControlUnitArch of ControlUnit
 
 } {} {}} R:/Architecture2/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ALU.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -56,6 +50,48 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading package NUMERIC_STD
 -- Compiling entity ALU
 -- Compiling architecture ALUArch of ALU
+
+} {} {}} R:/Architecture2/tristatebuffer.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/tristatebuffer.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tristateBuffer
+-- Compiling architecture arcTristate of tristateBuffer
+
+} {} {}} R:/Architecture2/register.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/register.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity nbitregister
+-- Compiling architecture nbitregister_architecture of nbitregister
+
+} {} {}} R:/Architecture2/ROM.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ROM.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ROM
+-- Compiling architecture my_rom of ROM
+
+} {} {}} R:/Architecture2/WriteBackStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/WriteBackStage.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity WBStage
+-- Compiling architecture WBStageArch of WBStage
+-- Loading entity nbitregister
+
+} {} {}} R:/Architecture2/FallingEdgeReg.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/FallingEdgeReg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity nbitregisterf
+-- Compiling architecture nbitregister_architecture of nbitregisterf
 
 } {} {}} R:/Architecture2/Processor.vhd {0 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/Processor.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -100,12 +136,16 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 ** Error (suppressible): R:/Architecture2/Processor.vhd(79): (vcom-1272) Length of formal "ExecuteMemory" is 83; length of actual is 16.
 ** Error: R:/Architecture2/Processor.vhd(87): VHDL Compiler exiting
 
-} {8.0 9.0 10.0 12.0 13.0 15.0 16.0 21.0 22.0 25.0 26.0 29.0 30.0 31.0 42.0 43.0} {}} R:/Architecture2/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/mux2.vhd
+} {8.0 9.0 10.0 12.0 13.0 15.0 16.0 21.0 22.0 25.0 26.0 29.0 30.0 31.0 42.0 43.0} {}} R:/Architecture2/DecodeStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/DecodeStage.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity Mux2
--- Compiling architecture Mux2Arch of Mux2
+-- Compiling entity DecodeStage
+-- Compiling architecture DecodeStageArch of DecodeStage
+-- Loading package NUMERIC_STD
+-- Loading entity RegisterFile
+-- Loading entity ControlUnit
+-- Loading entity nbitregister
 
 } {} {}}
