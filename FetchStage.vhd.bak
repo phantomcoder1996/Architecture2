@@ -25,8 +25,10 @@ WBSrcData  : in std_logic_vector(15 downto 0); --Output of multiplexer in Memory
 WBDstData  : in std_logic_vector(15 downto 0); --Output of multiplexer in Memory Stage
 
 decodedDstData: in std_logic_vector(15 downto 0); --is one of outputs of decoding stage
- pushIntrEn: in std_logic; --from control unit to be used in interrupt
+--from control unit to be used in interrupt----------------
+ pushIntrEn: in std_logic; 
  start	   : in  std_logic;
+--------------------
 ---instructionMemoryDataIn: in std_logic_vector(15 downto 0);-- needed for what !!! --
 --Output represents fetch decode register values required for the decoding stage
 
@@ -114,8 +116,11 @@ irRst<=branch or flush;
 Rsrc<=IROut(10 downto 8);
 Rdst<=IROut(8 downto 6);
 
-opCode<=IROut(15 downto 11) when not (branch or DECEXRET or EXECMEMRET  )
+
+if (branch='0' and  DECEXRET='0' and EXECMEMRET='0' ) then
+opCode<=IROut(15 downto 11) ;
 else "00000"; --no-operation
+end if;
 
 --TODO : Handle instructions that shall be loaded on two times
 --These are LDM - LDD - SHL -SHR - STD

@@ -36,8 +36,8 @@ OutportOutput: out std_logic_vector(15 downto 0);
 
 --Output from branch unit
 branch	     : inout std_logic;
-flush	     : inout std_logic
-EXECMEMRET: out std_logic;
+flush	     : inout std_logic;
+EXECMEMRET: out std_logic
 
 
 );

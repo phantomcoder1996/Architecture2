@@ -231,6 +231,7 @@ BR<=branch;
 
 
 outCtrlSignals<=inCtrlSignals;
+EXECMEMRET<=inCtrlSignals(8);
 ----------------------------
 
 end ExecuteStageArch;

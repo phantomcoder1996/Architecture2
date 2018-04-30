@@ -116,8 +116,12 @@ irRst<=branch or flush;
 Rsrc<=IROut(10 downto 8);
 Rdst<=IROut(8 downto 6);
 
-opCode<=IROut(15 downto 11) when not (branch or DECEXRET or EXECMEMRET  )
-else "00000"; --no-operation
+
+if (branch='0' and  DECEXRET='0' and EXECMEMRET='0' ) then
+opCode<=IROut(15 downto 11) ;
+else 
+opCode<="00000"; --no-operation
+end if;
 
 --TODO : Handle instructions that shall be loaded on two times
 --These are LDM - LDD - SHL -SHR - STD

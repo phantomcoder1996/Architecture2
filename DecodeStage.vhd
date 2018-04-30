@@ -36,10 +36,10 @@ FetchDecodeOpcode: out std_logic_vector( 4 downto 0); --needed for branch unit
 --Output from control unit
 --------------------------
  pushIntrEn: out std_logic;
- start	   : out std_logic
+ start	   : out std_logic;
 
 ------output for flushing 
-DECEXRET:out std_logic;
+DECEXRET:out std_logic
 
 );
 
