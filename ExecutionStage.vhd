@@ -10,7 +10,7 @@ rst: in std_logic;
 
 DecodeExecute: in std_logic_vector(54 downto 0);
 
-inCtrlSignals: in std_logic_vector(15 downto 0);
+inCtrlSignals: in std_logic_vector(11 downto 0);
 
 --opcode	     : in std_logic_vector(4 downto 0); --needed to check if the instuction in execute is out instruction
 --this could also be determined from iowrite but not sure;
@@ -24,14 +24,20 @@ FlagsREGOUT:out std_logic_vector(3 downto 0);
 --Output represents execution results as well as ctrl signals
 
 
-outCtrlSignals: out std_logic_vector(12 downto 0);
-ExecuteMemory:  out std_logic_vector(86 downto 0);
+outCtrlSignals: out std_logic_vector(11 downto 0);
+ExecuteMemory:  out std_logic_vector(82 downto 0);
 OutportOutput: out std_logic_vector(15 downto 0);
+
+
+------ALUOUPUT
+
+ ALURESult1: out std_logic_vector(15 downto 0);
+ ALURESutlt2: out  std_logic_vector(15 downto 0);
 
 --Output from branch unit
 branch	     : inout std_logic;
 flush	     : inout std_logic
-
+EXECMEMRET: out std_logic;
 
 
 );
@@ -73,7 +79,7 @@ SIGNAL CALLRET         :std_logic_vector(1 downto 0); --10 call 01 ret
 SIGNAL WBB             :std_logic_vector(2 downto 0); -- src dst dst hazard
 
 Signal OutportInput	: std_logic_vector(15 downto 0);
-Signal ExMemIN          :  std_logic_vector(86 downto 0);
+Signal ExMemIN          :  std_logic_vector(82 downto 0);
 -----------------------
 --Signal  ALU
 Signal FlagsALU: std_logic_vector(3 downto 0);
@@ -153,16 +159,10 @@ opcode		<= DecodeExecute(4 downto 0);
 -----------------------------
 
 --ToDo: Write decoding of in ctrl signals as shown
-DEXMUX   <=   inCtrlSignals(0);        --shr shl ldm
-EXMEMMUX  <=   inCtrlSignals(1);       -- push std out 
-MEMIO     <=   inCtrlSignals(4 downto 2);       -- 00 rd mem-- 01 wr mem --10 rd IO --11 wr IO
-SELSRC    <=     inCtrlSignals(5);  --push pop ret reti call
-SELDST     <=     inCtrlSignals(7 downto 6); -- 00 in --01 any alu --10 ldd/pop  -- 11 LDM
-JMPS       <=     inCtrlSignals(10 downto 8); -- 00 jmp --01 jz --10 jn  -- 11 jc
-CALLRET    <= inCtrlSignals(12 downto 11);--10 call 01 ret
-WBB           <=inCtrlSignals(15 downto 13); -- src dst dst hazard
-IoWr		<= '1' when MEMIO(1 downto 0)="11"
- else '0';
+
+MEMIO     <=   inCtrlSignals(11 downto 9);       -- 00 rd mem-- 01 wr mem --10 rd IO --11 wr IO
+IoWr		<= '1' when MEMIO="001"
+else '0';
 
 
 
@@ -181,6 +181,10 @@ else '0';
 ALUUnit :entity work.ALU port map(ALURSRC,ALUDEST,opcode,ALUEN,ALURES1,ALURES2,FlagsALU);
 FlagsREGOUT<=FlagsALU;
 
+-----------------ALU results 
+ALURESult1<=ALURES1;
+ALURESutlt2<=ALURES2;
+
 --TODO: Add muxes at src and dst values of alu
 -----------------------------------------------
 sel1SRC<=x(4);
@@ -195,6 +199,7 @@ RsrcVMux3<=RsrcVMux2 when sel2SRC='1'
 else RsrcVMux1;
 ALURSRC<= RsrcV when sel4SRC='0'
 else RsrcVMux3;
+
 
 
 ----------------------------
@@ -213,10 +218,10 @@ else RdstVMUX3;
 
 --TODO: Add Execute Memory register Its output is 65 bits and is declared in entity declaration above
 --------------------------------------------------------------------------------------------------------
-ROUT<=ALURES2 when opcode= PUSHOP or opcode= STDOP or  opcode= OUTOP or DEXMUX='1'
-else RsrcV;
+ROUT<=RsrcV when  opcode= STDOP --revise design changed
+else ALURES2;
 ExMemIN<= incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst & opcode & inCtrlSignals & intIndicator & flush;
-ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>87) port map(ExMemIN,rst,clk,'1',ExecuteMemory);
+ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>83) port map(ExMemIN,rst,clk,'1',ExecuteMemory);
 
 
 --TODO: Add branch unit here make sure that the opcode you pass to branch unit is fetchDecodeOpcode in entity declaration
@@ -225,7 +230,8 @@ BranchUnit: entity work.BranchUnit port map(fetchDecodeOpcode,ALUEN,FlagsALU,Fla
 BR<=branch;
 
 
-
+outCtrlSignals<=inCtrlSignals;
+EXECMEMRET<=inCtrlSignals(8);
 ----------------------------
 
 end ExecuteStageArch;

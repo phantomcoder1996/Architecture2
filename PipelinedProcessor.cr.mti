@@ -6,6 +6,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity nbitregister
 -- Compiling architecture nbitregister_architecture of nbitregister
 
+} {} {}} R:/Architecture2/ControlUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ControlUnit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ControlUnit
+-- Compiling architecture ControlUnitArch of ControlUnit
+
+} {} {}} R:/Architecture2/ROM.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ROM.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ROM
+-- Compiling architecture my_rom of ROM
+
 } {} {}} R:/Architecture2/tristatebuffer.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/tristatebuffer.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
@@ -40,38 +57,55 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity ALU
 -- Compiling architecture ALUArch of ALU
 
-} {} {}} R:/Architecture2/ExecutionStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ExecutionStage.vhd
+} {} {}} R:/Architecture2/Processor.vhd {0 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/Processor.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity ExecuteStage
--- Compiling architecture ExecuteStageArch of ExecuteStage
--- Loading entity outPortController
--- Loading entity nbitregisterf
--- Loading package NUMERIC_STD
--- Loading entity ALU
--- Loading entity nbitregister
--- Loading entity BranchUnit
+-- Compiling entity processor
+-- Compiling architecture processorArch of processor
+** Error: R:/Architecture2/Processor.vhd(51): (vcom-1294) Declaration with designator "outCtrlSignals" already exists in this region.
+** =====> Prior declaration of "outCtrlSignals" is at R:/Architecture2/Processor.vhd(40).
+** Error: R:/Architecture2/Processor.vhd(53): near "SIGNAL": (vcom-1576) expecting ';'.
+** Error: R:/Architecture2/Processor.vhd(62): near "out": (vcom-1576) expecting STRING or IDENTIFIER or << or '('.
+-- Loading entity FetchStage
+** Error: R:/Architecture2/Processor.vhd(77): Signal "x" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+** Error: R:/Architecture2/Processor.vhd(77): (vcom-1136) Unknown identifier "nextStageEn".
+-- Loading entity DecodeStage
+** Error: R:/Architecture2/Processor.vhd(78): Signal "FetchDecodeOutput" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+** Error: R:/Architecture2/Processor.vhd(78): Signal "WriteBack" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+** Error: R:/Architecture2/Processor.vhd(78): Signal "outCtrlSignalsWB" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+** Error: R:/Architecture2/Processor.vhd(78): (vcom-1136) Unknown identifier "nextStageEn".
+** Error: R:/Architecture2/Processor.vhd(78): (vcom-1136) Unknown identifier "FetchDecodeOpcode".
+-- Loading entity ExecuteStage
+** Error: R:/Architecture2/Processor.vhd(79): (vcom-1136) Unknown identifier "FetchDecodeOpcode".
+** Error: R:/Architecture2/Processor.vhd(79): Signal "Branch" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: R:/Architecture2/Processor.vhd(79): Signal "Flush" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+-- Loading entity MemoryStage
+** Error: R:/Architecture2/Processor.vhd(80): near ",": syntax error
+** Error: R:/Architecture2/Processor.vhd(81): Statement cannot be labeled.
+** Error: (vcom-11) Could not find work.wbstageport.
+** Error (suppressible): R:/Architecture2/Processor.vhd(81): (vcom-1195) Cannot find expanded name "work.WBStageport".
+** Error: R:/Architecture2/Processor.vhd(81): near "map": (vcom-1576) expecting ';'.
+** Error (suppressible): R:/Architecture2/Processor.vhd(77): (vcom-1272) Length of formal "x" is 15; length of actual is 16.
+** Error (suppressible): R:/Architecture2/Processor.vhd(77): (vcom-1272) Length of formal "decodedDstData" is 16; length of actual is 37.
+** Error (suppressible): R:/Architecture2/Processor.vhd(78): (vcom-1272) Length of formal "WriteBack" is 39; length of actual is 16.
+** Error (suppressible): R:/Architecture2/Processor.vhd(78): (vcom-1272) Length of formal "WriteBackCtrlSignals" is 3; length of actual is 16.
+** Error (suppressible): R:/Architecture2/Processor.vhd(78): (vcom-1272) Length of formal "PortInput" is 16; length of actual is 55.
+** Error (suppressible): R:/Architecture2/Processor.vhd(79): (vcom-1272) Length of formal "inCtrlSignals" is 12; length of actual is 16.
+** Error (suppressible): R:/Architecture2/Processor.vhd(79): (vcom-1272) Length of formal "WriteBack" is 32; length of actual is 39.
+** Error (suppressible): R:/Architecture2/Processor.vhd(79): (vcom-1272) Length of formal "FlagsReg" is 4; length of actual is 3.
+** Error (suppressible): R:/Architecture2/Processor.vhd(79): (vcom-1272) Length of formal "FlagsREGOUT" is 4; length of actual is 87.
+** Error (suppressible): R:/Architecture2/Processor.vhd(79): (vcom-1272) Length of formal "outCtrlSignals" is 12; length of actual is 16.
+** Error (suppressible): R:/Architecture2/Processor.vhd(79): (vcom-1272) Length of formal "ExecuteMemory" is 83; length of actual is 16.
+** Error: R:/Architecture2/Processor.vhd(87): VHDL Compiler exiting
 
-} {} {}} R:/Architecture2/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/mux2.vhd
+} {8.0 9.0 10.0 12.0 13.0 15.0 16.0 21.0 22.0 25.0 26.0 29.0 30.0 31.0 42.0 43.0} {}} R:/Architecture2/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/mux2.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Compiling entity Mux2
 -- Compiling architecture Mux2Arch of Mux2
-
-} {} {}} R:/Architecture2/DecodeStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/DecodeStage.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity DecodeStage
--- Compiling architecture DecodeStageArch of DecodeStage
--- Loading package NUMERIC_STD
--- Loading entity RegisterFile
--- Loading entity ControlUnit
--- Loading entity nbitregister
 
 } {} {}}

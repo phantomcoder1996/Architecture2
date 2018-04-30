@@ -12,6 +12,8 @@ rst   :in std_logic; --external signal to set all registers to 0
 --PCen  :in std_logic; --external signal from branch unit required for flushing
 ret   :in std_logic; --Signal from execute memory stage to indicate ret or reti
 flush :in std_logic; --Signal from branch unit
+DECEXRET:in std_logic;--control signal from decode stage bit 8
+EXECMEMRET: in std_logic;--control signal from execute stage bit 8
 
 --Data and signals required from early branching
 ------------------------------------------------
@@ -23,7 +25,10 @@ WBSrcData  : in std_logic_vector(15 downto 0); --Output of multiplexer in Memory
 WBDstData  : in std_logic_vector(15 downto 0); --Output of multiplexer in Memory Stage
 
 decodedDstData: in std_logic_vector(15 downto 0); --is one of outputs of decoding stage
-
+--from control unit to be used in interrupt----------------
+ pushIntrEn: in std_logic; 
+ start	   : in  std_logic;
+--------------------
 ---instructionMemoryDataIn: in std_logic_vector(15 downto 0);-- needed for what !!! --
 --Output represents fetch decode register values required for the decoding stage
 
@@ -110,7 +115,9 @@ Process(clk,IROut,countEn)
 irRst<=branch or flush;
 Rsrc<=IROut(10 downto 8);
 Rdst<=IROut(8 downto 6);
-opCode<=IROut(15 downto 11);
+
+opCode<=IROut(15 downto 11) when not (branch or DECEXRET or EXECMEMRET  )
+else "00000"; --no-operation
 
 --TODO : Handle instructions that shall be loaded on two times
 --These are LDM - LDD - SHL -SHR - STD
