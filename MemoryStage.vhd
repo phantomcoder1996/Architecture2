@@ -9,9 +9,9 @@ Port(
 clk: in std_logic;
 rst: in std_logic;
 
-ExecuteMemory: in std_logic_vector(82 downto 0);
+ExecuteMemory: in std_logic_vector(64 downto 0);
 MemWBRDst    : in std_logic_vector(15 downto 0); --forwarded from write back stage
-inctrlSignals: in std_logic_vector(12 downto 0);
+inctrlSignals: in std_logic_vector(11 downto 0);
 x: in std_logic_vector(14 downto 0); --Output from forwarding unit
 
 
@@ -115,7 +115,7 @@ RdstVal<=Rdst;
 --------------------------------
 
 
-Immediate		<=RdstV_imm;
+Immediate<=RdstV_imm;
 
 --TODO: Multiplexer for address
 --This mux chooses between 
