@@ -146,6 +146,8 @@ SIGNAL FlagsREGOUT: std_logic_vector(3 downto 0);
 ---------------
 
 SIGNAL ExMemSHorLDM	:std_logic;
+
+SIGNAL cntrlsgmod:std_logic_vector(11 downto 0);
 -------
 begin
 
@@ -235,7 +237,10 @@ else ALURES2;
 
 EXMEMEN<='1' when stall='0'
  else '0';
-ExMemIN<= inCtrlSignals& ExMemSHorLDM & intIndicator &incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst   ;
+cntrlsgmod <=inCtrlSignals when stall='0'
+else "000000000000";
+
+ExMemIN<= cntrlsgmod & ExMemSHorLDM & intIndicator &incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst   ;
 ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>66) port map(ExMemIN,rst,clk,EXMEMEN,ExecuteMemory);
 
 
@@ -248,7 +253,7 @@ FlagRegister: entity work.nbitRegister generic map(n=>4) port map(FlagsReg,rst,c
 ---------------------------------------------
 
 --outCtrlSignals <= ExecuteMemory(77 downto 66);
-EXECMEMRET<=inCtrlSignals(8);
+EXECMEMRET<=cntrlsgmod(8);
 ExMemSHorLDM<='1' when opcode= SHLCOP or opcode= SHRCOP or opcode=LDMOP
 else '0';
 ----------------------------

@@ -84,7 +84,16 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity ROM
 -- Compiling architecture my_rom of ROM
 
-} {} {}} R:/Architecture2/DecodeStage.vhd {0 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/DecodeStage.vhd
+} {} {}} R:/Architecture2/WriteBackStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/WriteBackStage.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity WBStage
+-- Compiling architecture WBStageArch of WBStage
+-- Loading entity nbitregister
+
+} {} {}} R:/Architecture2/DecodeStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/DecodeStage.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -95,24 +104,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading entity RegisterFile
 -- Loading entity ControlUnit
 -- Loading entity nbitregister
-** Error: R:/Architecture2/DecodeStage.vhd(154): Cannot read output "DecodeExecute".
-	VHDL 2008 allows reading outputs.
-	This facility is enabled by compiling with -2008.
-** Error: R:/Architecture2/DecodeStage.vhd(161): VHDL Compiler exiting
-
-} {12.0 13.0 15.0 16.0} {}} R:/Architecture2/ExecutionStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ExecutionStage.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity ExecuteStage
--- Compiling architecture ExecuteStageArch of ExecuteStage
--- Loading entity outPortController
--- Loading entity nbitregisterf
--- Loading package NUMERIC_STD
--- Loading entity ALU
--- Loading entity nbitregister
--- Loading entity BranchUnit
 
 } {} {}} R:/Architecture2/Processor.vhd {0 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/Processor.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -126,11 +117,12 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading entity DecodeStage
 -- Loading entity ExecuteStage
 -- Loading entity MemoryStage
-** Error: R:/Architecture2/Processor.vhd(148): (vcom-1027) Number of positional association elements (14) exceeds number of formals (12).
+** Error: R:/Architecture2/Processor.vhd(152): (vcom-1027) Number of positional association elements (14) exceeds number of formals (12).
 -- Loading entity WBStage
-** Error: R:/Architecture2/Processor.vhd(155): VHDL Compiler exiting
+-- Loading entity nbitregister
+** Error: R:/Architecture2/Processor.vhd(159): VHDL Compiler exiting
 
-} {13.0 14.0 15.0 16.0} {}} R:/Architecture2/FallingEdgeReg.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/FallingEdgeReg.vhd
+} {13.0 14.0 16.0 17.0} {}} R:/Architecture2/FallingEdgeReg.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/FallingEdgeReg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
