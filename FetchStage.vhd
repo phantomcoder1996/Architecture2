@@ -34,7 +34,12 @@ decodedDstData: in std_logic_vector(15 downto 0); --is one of outputs of decodin
 
 ---InstructionMemoryAddressOut: out std_logic_vector(9 downto 0); -- needed for what !!! --
 FetchDecodeOutput: out std_logic_vector(36 downto 0);
-nextStageEn: inout std_logic --inout becuase i need to read its value---
+nextStageEn: inout std_logic; --inout becuase i need to read its value---
+
+
+------------------
+FetDecUSERsrc     : out std_logic;
+FetDecUSERdst     : out std_logic
 
 );
 end entity;
@@ -90,6 +95,8 @@ component Counter IS
 ------------------- End components -----------------------
 -------------------------------------------------------------
 begin
+FetDecUSERsrc<=instrMemOut(1);
+FetDecUSERdst<=instrMemOut(2);
 
 
 

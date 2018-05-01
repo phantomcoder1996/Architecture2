@@ -20,7 +20,7 @@ ALUEn: in std_logic; --one of Ctrl Signals in decode execute buffers to indicate
 
 ALURes1: out std_logic_vector(15 downto 0);   -----output
 ALURes2: out std_logic_vector(15 downto 0);
-Flags  : in std_logic_vector(3 downto 0); --Input to flag register   -z c n o
+Flags  : in std_logic_vector(3 downto 0)--Input to flag register   -z c n o
 FlagsOut  : out std_logic_vector(3 downto 0) --Input to flag register   -z c n o
 
  );

@@ -20,7 +20,7 @@ ALUEn: in std_logic; --one of Ctrl Signals in decode execute buffers to indicate
 
 ALURes1: out std_logic_vector(15 downto 0);   -----output
 ALURes2: out std_logic_vector(15 downto 0);
-Flags  : inout std_logic_vector(3 downto 0); --Input to flag register   -z c n o
+Flags  : in std_logic_vector(3 downto 0);--Input to flag register   -z c n o
 FlagsOut  : out std_logic_vector(3 downto 0) --Input to flag register   -z c n o
 
  );
@@ -121,20 +121,20 @@ TempCarry<= Flags(2) when opcode=SHRCOP or opcode=SHLCOP;
 
 
 --------------------over flow flag----------------------------------------------------
- Flags(0)<= '1' when ((output(15) /= output(16) or multiply(33) /= multiply(32)) AND opcode/=SHLOP  AND opcode/=SHROP)
+ FlagsOut(0)<= '1' when ((output(15) /= output(16) or multiply(33) /= multiply(32)) AND opcode/=SHLOP  AND opcode/=SHROP)
                 else '1' when (opcode=SHLOP  or opcode=SHROP ) AND (output2(15) /= output2(16))
                 else Flags(0) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP   or opcode=JMPZOP or opcode=JMPNOP or opcode=JMPCOP or opcode=NOOP or opcode=LDDOP or opcode=LDMOP or opcode=OUTOP or opcode=INOP or opcode=STDOP
                 else '0';  
 ---------------------Zero flag------------------------------------------------------
- Flags(3)<='1' when (output = (output'range => '0') and (opcode= ADDOP or opcode= SUBOP or opcode=ANDOP or opcode=OROP or opcode=DECOP)) or (multiply= (multiply'range => '0') and opcode= MULOP) 
+ FlagsOut(3)<='1' when (output = (output'range => '0') and (opcode= ADDOP or opcode= SUBOP or opcode=ANDOP or opcode=OROP or opcode=DECOP)) or (multiply= (multiply'range => '0') and opcode= MULOP) 
    else Flags(3) when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or ( opcode=JMPZOP and BRANCHZERO/='1')    or opcode=JMPNOP or opcode=JMPCOP or opcode=NOOP or opcode=LDDOP or opcode=LDMOP or opcode=OUTOP or opcode=INOP or opcode=STDOP
    else '0';
 --------------------Neg flag---------------------------------------------------------
- Flags(1)<='1' when (output < (output'range => '0')and (opcode= ADDOP or opcode= SUBOP or opcode=ANDOP or opcode=OROP or opcode=DECOP)) or (multiply < (multiply'range => '0') and opcode= MULOP) 
+ FlagsOut(1)<='1' when (output < (output'range => '0')and (opcode= ADDOP or opcode= SUBOP or opcode=ANDOP or opcode=OROP or opcode=DECOP)) or (multiply < (multiply'range => '0') and opcode= MULOP) 
     else Flags(1)when  opcode=PUSHOP or opcode =CALLOP or opcode=POPOP or opcode=RETOP or opcode=RETIOP or  opcode =MOVOP or opcode=SHLOP or opcode=SHROP or opcode=JMPOP or (opcode=JMPNOP and BRANCHN/='1')  or opcode= JMPCOP or opcode=JMPZOP or opcode=NOOP or opcode=LDDOP or opcode=LDMOP or opcode=OUTOP or opcode=INOP or opcode=STDOP
     else '0';
 -------------------carry flag--------------------------------------------------------------
-Flags(2)<= ALUSrc2(0) when opcode=SHRCOP
+FlagsOut(2)<= ALUSrc2(0) when opcode=SHRCOP
 else    ALUSrc2(15) when opcode=SHLCOP
 else  '1'when  opcode="01011" --set carry
 else  output(16) when opcode=ADDOP or  (opcode=SUBOP)  or opcode=INCOP or opcode=DECOP

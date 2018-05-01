@@ -29,7 +29,7 @@ nextStageEn: in std_logic;
 ----------------------------------------------------------
 CtrlSignals : out std_logic_vector(11 downto 0);
 decodedDstD : out std_logic_vector(15 downto 0); --Decoded data required for branching and will be needed by fetch stage
-DecodeExecute: out std_logic_vector(54 downto 0);
+DecodeExecute: out std_logic_vector(55 downto 0);
 
 FetchDecodeOpcode: out std_logic_vector( 4 downto 0); --needed for branch unit
 
@@ -55,7 +55,7 @@ Signal decodedSrcData	  :std_logic_vector(15 downto 0);
 Signal decodedDstData	  :std_logic_vector(15 downto 0);
 Signal decodedCtrlSignals :std_logic_vector(11 downto 0);
 Signal rdstV_port	  :std_logic_vector(15 downto 0);
-Signal DecodeExecuteIn	  :std_logic_vector(54 downto 0);
+Signal DecodeExecuteIn	  :std_logic_vector(55 downto 0);
 
 Signal DecExEn		  :std_logic;
 
@@ -85,7 +85,8 @@ Signal Wsrc:		 std_logic;
 Signal Wdst:	         std_logic;
 
 
-
+---------------------------
+Signal DecExSHorLDM	  : std_logic;
 
 
 begin
@@ -136,6 +137,7 @@ rdstv_port	<= portInput when inInst='1' else decodedDstData;
 
 --Decode Execute Register mapping
 ----------------------------------
+ DecodeExecuteIn(55)<=DecExSHorLDM;
  DecodeExecuteIn(54)		<= '1'; --I dont know what this signal is used for
  DecodeExecuteIn(53)	        <= '1' when int='1' else '0';
  DecodeExecuteIn(52 downto 43)	<= incrementedPC;
@@ -151,4 +153,8 @@ rdstv_port	<= portInput when inInst='1' else decodedDstData;
 
  CtrlSignals<= decodedCtrlSignals;
  DECEXRET<=decodedCtrlSignals(8);
+
+
+DecExSHorLDM<='1' when opcode="11100" or opcode="01010" or opcode="01001"
+else '0';
 end DecodeStageArch;

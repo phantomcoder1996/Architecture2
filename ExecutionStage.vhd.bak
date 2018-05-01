@@ -9,7 +9,7 @@ rst: in std_logic;
 
 
 stall:in std_logic;
-DecodeExecute: in std_logic_vector(54 downto 0);
+DecodeExecute: in std_logic_vector(55 downto 0);
 
 inCtrlSignals: in std_logic_vector(11 downto 0);
 
@@ -17,16 +17,16 @@ inCtrlSignals: in std_logic_vector(11 downto 0);
 --this could also be determined from iowrite but not sure;
 ExMemRdstV   : in std_logic_vector(15 downto 0); --Dst multiplexer output in memory wb stage
 ExMemRsrcV   : in std_logic_vector(15 downto 0); --Src multiplexer output in memory wb stage
-WriteBack    : in std_logic_vector(31 downto 0);  --maps to WriteBack Register from 38 down to 7
+WriteBack    : in std_logic_vector(38 downto 0);  --maps to WriteBack Register from 38 down to 7
 x	     : in std_logic_vector(14 downto 0); --input from forwarding unit
 fetchDecodeOpcode: in std_logic_vector(4 downto 0); --passed from decode stage for branch unit
-FlagsReg: in std_logic_vector(3 downto 0);
-FlagsREGOUT:out std_logic_vector(3 downto 0);
+--FlagsReg: in std_logic_vector(3 downto 0);
+--FlagsREGOUT:out std_logic_vector(3 downto 0);
 --Output represents execution results as well as ctrl signals
 
 
 outCtrlSignals: out std_logic_vector(11 downto 0);
-ExecuteMemory:  out std_logic_vector(64 downto 0);
+ExecuteMemory:  out std_logic_vector(65 downto 0);
 OutportOutput: out std_logic_vector(15 downto 0);
 
 
@@ -80,7 +80,7 @@ SIGNAL CALLRET         :std_logic_vector(1 downto 0); --10 call 01 ret
 SIGNAL WBB             :std_logic_vector(2 downto 0); -- src dst dst hazard
 
 Signal OutportInput	: std_logic_vector(15 downto 0);
-Signal ExMemIN          :  std_logic_vector(64 downto 0);
+Signal ExMemIN          :  std_logic_vector(65 downto 0);
 -----------------------
 --Signal  ALU
 Signal FlagsALU: std_logic_vector(3 downto 0);
@@ -140,12 +140,18 @@ SIGNAL ROUT:std_logic_vector(15 downto 0);
 
 SIGNAL EXMEMEN: std_logic;
 --------------------
+SIGNAL FlagsReg:  std_logic_vector(3 downto 0);
+SIGNAL FlagsREGOUT: std_logic_vector(3 downto 0);
+---------------
+
+SIGNAL ExMemSHorLDM	:std_logic;
+-------
 begin
 
 --Signals coming from WriteBack Stage
 -------------------------------------
-WBsrcData	<= 	WriteBack(31 downto 16);
-WBdstData	<= 	WriteBack(15 downto 0);
+WBsrcData	<= 	WriteBack(38 downto 23);
+WBdstData	<= 	WriteBack(22 downto 7);
 
 
 --Decode Execute Register fields
@@ -182,8 +188,8 @@ Outputport          :entity work.nbitregisterf port map(outPortInput,rst,clk,IOW
 ALUEN<='1' when opcode=ANDOP or  opcode=SHLCOP or opcode=SHRCOP or opcode=OROP or opcode=NOTOP  or opcode=DECOP or opcode=ADDOP or opcode=SUBOP or opcode=MULOP 
 else '0';
 
-ALUUnit :entity work.ALU port map(ALURSRC,ALUDEST,opcode,ALUEN,ALURES1,ALURES2,FlagsALU);
-FlagsREGOUT<=FlagsALU;
+ALUUnit :entity work.ALU port map(ALURSRC,ALUDEST,opcode,ALUEN,ALURES1,ALURES2,FlagsREGOUT,FlagsALU);
+FlagsReg<=FlagsALU;
 
 -----------------ALU results 
 ALURESult1<=ALURES1;
@@ -227,18 +233,22 @@ else ALURES2;
 
 EXMEMEN<='1' when stall='0'
  else '0';
-ExMemIN<= intIndicator &incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst   ;
-ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>65) port map(ExMemIN,rst,clk,'1',ExecuteMemory);
+ExMemIN<= ExMemSHorLDM & intIndicator &incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst   ;
+ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>66) port map(ExMemIN,rst,clk,EXMEMEN,ExecuteMemory);
 
 
 --TODO: Add branch unit here make sure that the opcode you pass to branch unit is fetchDecodeOpcode in entity declaration
 --------------------------------------------------------------------------------------------------------------------------------
-BranchUnit: entity work.BranchUnit port map(fetchDecodeOpcode,ALUEN,FlagsALU,FlagsReg,branch,flush);
+BranchUnit: entity work.BranchUnit port map(fetchDecodeOpcode,ALUEN,FlagsALU,FlagsREGOUT,branch,flush);
 BR<=branch;
-
+------------------------------------Flags
+FlagRegister: entity work.nbitRegister generic map(n=>4) port map(FlagsReg,rst,clk,ALUEN,FlagsREGOUT);
+---------------------------------------------
 
 outCtrlSignals<=inCtrlSignals;
 EXECMEMRET<=inCtrlSignals(8);
+ExMemSHorLDM<='1' when opcode= SHLCOP or opcode= SHRCOP or opcode=LDMOP
+else '0';
 ----------------------------
 
 end ExecuteStageArch;
