@@ -34,12 +34,12 @@ end entity;
 
 Architecture ForwardingUnitArch of ForwardingUnit is
 
-Signal MemWBMemRead: in std_logic;
-Signal memWBWBDst  : in std_logic;
-Signal memWBWBSrc  : in std_logic;
+Signal MemWBMemRead:  std_logic;
+Signal memWBWBDst  :  std_logic;
+Signal memWBWBSrc  :  std_logic;
 
-Signal LDD   	   : in std_logic;
-Signal Pop	   : in std_logic;
+Signal LDD   	   :  std_logic;
+Signal Pop	   :  std_logic;
 
 begin
 

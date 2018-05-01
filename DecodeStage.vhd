@@ -9,6 +9,10 @@ clk   :in std_logic;
 reset :in std_logic; --signal to load pc with M[0]
 int   :in std_logic;
 
+ack   :in std_logic;
+branch:in std_logic;
+updated:in std_logic;
+
 rst   :in std_logic; --external signal to set all registers to 0
 
 
@@ -27,7 +31,12 @@ CtrlSignals : out std_logic_vector(15 downto 0);
 decodedDstD : out std_logic_vector(15 downto 0); --Decoded data required for branching and will be needed by fetch stage
 DecodeExecute: out std_logic_vector(54 downto 0);
 
-FetchDecodeOpcode: out std_logic_vector( 4 downto 0) --needed for branch unit
+FetchDecodeOpcode: out std_logic_vector( 4 downto 0); --needed for branch unit
+
+--Output from control unit
+--------------------------
+ pushIntrEn: out std_logic;
+ start	   : out std_logic
 
 
 
@@ -43,7 +52,7 @@ Architecture DecodeStageArch of DecodeStage is
 --------------------------------
 Signal decodedSrcData	  :std_logic_vector(15 downto 0);
 Signal decodedDstData	  :std_logic_vector(15 downto 0);
-Signal decodedCtrlSignals :std_logic_vector(14 downto 0);
+Signal decodedCtrlSignals :std_logic_vector(15 downto 0);
 Signal rdstV_port	  :std_logic_vector(15 downto 0);
 Signal DecodeExecuteIn	  :std_logic_vector(54 downto 0);
 
@@ -77,6 +86,7 @@ Signal Wdst:	         std_logic;
 
 
 
+
 begin
 
 incrementedPC	<=	FetchDecode(36 downto 27);
@@ -105,7 +115,7 @@ RegisterFile 	: entity work.RegisterFile port map(clk,rst,wsrc,wdst,WBRsrc,WBRds
 
 --Control Unit
 --------------
-ControlUnit	: entity work.ControlUnit port map(opcode,decodedCtrlSignals);
+ControlUnit	: entity work.ControlUnit port map(opcode,int,ack,branch,updated,clk,decodedCtrlSignals,pushIntrEn,start);
 
 --Branch Unit
 --------------
@@ -138,4 +148,6 @@ rdstv_port	<= portInput when inInst='1' else decodedDstData;
 
  DecodeExecuteRegister: entity work.nbitRegister generic map(n=>71) port map(DecodeExecuteIn,rst,clk,DecExEn,DecodeExecute);
 
+ CtrlSignals<= decodedCtrlSignals;
+ 
 end DecodeStageArch;
