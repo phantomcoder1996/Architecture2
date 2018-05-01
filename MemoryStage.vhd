@@ -31,7 +31,7 @@ WBSrc:out std_logic_vector(15 downto 0);
 WBDst:out std_logic_vector(15 downto 0);
 RsrcVal:out std_logic_vector(2 downto 0);
 RdstVal:out std_logic_vector(2 downto 0);
-intIndicator	: out std_logic;
+intIndicator	: out std_logic
 
 );
 

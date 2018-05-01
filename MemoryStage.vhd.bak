@@ -108,6 +108,9 @@ RdstV_imm		<= ExecuteMemory(21 downto 6);
 Rsrc			<= ExecuteMemory(5 downto 3);
 Rdst			<= ExecuteMemory(2 downto 0);
 
+RsrcVal<=Rsrc;
+RdstVal<=Rdst;
+
 --TODO: Decode in ctrlSigs here
 --------------------------------
 
