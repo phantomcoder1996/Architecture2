@@ -104,7 +104,8 @@ Signal DecExWBSrc        :  std_logic;
 
 
 
-
+----------Prot input signal
+SIGNAL PortIN:std_logic_vector(15 downto 0);
 
 
 
@@ -146,7 +147,7 @@ DecExMemRead <=CtrlSignals (2);
 ForwardingUnitt:entity work.ForwardingUnit port map(FetDecRsrc,FetDecRdst,DecExRsrc,DecExRdst,ExMemRsrc,ExMemRdst,MemWBRsrc,MemWBRdst,ExMemWBDst,ExMemWBSrc,ExMemMemWrite,DecExMemRead,DecExWBDst,DecExWBSrc,Branch,FetDecUSERsrc,FetDecUSERdst,DecExSHorLDM,ExMemSHorLDM,WriteBack(41 downto 39),stall,x);
 --Create instances for the stages of fetch- decode - execute -memory -wb stages
 FetchStage: entity work.FetchStage port map(clk,reset,int,Branch,rst,ret,Flush,DECEXRET,EXECMEMRET,x,ALUResult1,AlUResult2,MemoryData,WBSrcData,WBDstData,decodedDstData,pushIntrEn,start,FetchDecodeOutput,nextStageEn,FetDecUSERsrc,FetDecUSERdst,stall);
-DecodeStage: entity work.DecodeStage port map(clk,reset,int,ack,Branch,updated,rst,FetchDecodeOutput,WriteBack(38 downto 0),WriteBack(41 downto 39),portInput,nextStageEn,decodedDstD,DecodeExecute,FetchDecodeOpcode,pushIntrEn,start,DECEXRET);
+DecodeStage: entity work.DecodeStage port map(clk,reset,int,ack,Branch,updated,rst,FetchDecodeOutput,WriteBack(38 downto 0),WriteBack(41 downto 39),PortIN,nextStageEn,decodedDstD,DecodeExecute,FetchDecodeOpcode,pushIntrEn,start,DECEXRET);
 ExecuteStage: entity work.ExecuteStage port map(clk,rst,stall,DecodeExecute(55 downto 0),DecodeExecute(67 downto 56),WBDstData,WBSrcData,WriteBack(38 downto 0),x,FetchDecodeOpcode,ExecuteMemory,OutportOutput,ALUResult1,AlUResult2,Branch,Flush,EXECMEMRET);
 MemoryStage:entity work.MemoryStage port map (clk,rst,ExecuteMemory(64 downto 0),WBDstData,ExecuteMemory(77 downto 66),x,outCtrlSignalsMem,MemoryData,Address,WBSrcData,WBDstData,RsrcVal,RdstVal,intIndicator);
 WBStage:entity work.WBStage port map (clk,rst,outCtrlSignalsMem,WriteBack,WBSrcData,WBDstData,RsrcVal,RdstVal,intIndicator);
@@ -154,5 +155,5 @@ WBStage:entity work.WBStage port map (clk,rst,outCtrlSignalsMem,WriteBack,WBSrcD
 
 --After that Create a file for the interface of the processor with instruction memory and data memory as well as input port
 --Instruction memory is in file instructionmemory.vhdl(sob7an allah) w datamemory is in file (ram.vhdl)
-
+InputPort : entity work.nbitRegister generic map(n=>16)port map(portInput,rst,clk,'1',PortIN);
 end processorArch;
