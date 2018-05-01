@@ -15,12 +15,12 @@ rst: in std_logic;
 
 inCtrlSignals: in std_logic_vector(2 downto 0); --In ctrl signals are more than 3 change them here and in the out Ctrl sigs of memory stage
 
-WriteBack: out std_logic_vector(38 downto 0);
+WriteBack: out std_logic_vector(41 downto 0);
 WBSrc:in std_logic_vector(15 downto 0);
 WBDst:in std_logic_vector(15 downto 0);
 RsrcVal:in std_logic_vector(2 downto 0);
 RdstVal:in std_logic_vector(2 downto 0);
-intIndicator	: in std_logic;
+intIndicator	: in std_logic
 
 --The WriteBack register buffer is divided as follows
 --------------------------------------------------------
@@ -30,7 +30,7 @@ intIndicator	: in std_logic;
 --RDst=> WriteBack(3 downto 1)
 --IntAck=> WriteBack(0) 
 ---------------------------------------------------------
-outCtrlSignals: out std_logic_vector( 2 downto 0)
+--outCtrlSignals: out std_logic_vector( 2 downto 0)
 --ctrl signals required for this stage are wrback src, wbdest and memread
 
 
@@ -44,15 +44,15 @@ end entity;
 
 
 Architecture WBStageArch of WBStage is
-Signal WBIN:std_logic_vector(38 downto 0);
+Signal WBIN:std_logic_vector(41 downto 0);
 
 --TODO: Decode in ctrlSigs here 
 
 begin
-WBIN<= WBSrc&WBDst&RsrcVal&RdstVal&intIndicator;
+WBIN<= inCtrlSignals& WBSrc&WBDst&RsrcVal&RdstVal&intIndicator;
 
-WriteBackRegister: entity work.nbitRegister generic map(n=>39)port map(WBIN,rst,clk,'1',WriteBack);
-outCtrlSignals<=inCtrlSignals;
+WriteBackRegister: entity work.nbitRegister generic map(n=>42)port map(WBIN,rst,clk,'1',WriteBack);
+--outCtrlSignals<=inCtrlSignals;
 --Add muxes for WBSrc and WBDst
 
 

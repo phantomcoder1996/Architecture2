@@ -38,7 +38,7 @@ SIGNAL ALUResult1 :  std_logic_vector(15 downto 0);
 SIGNAL AlUResult2 :  std_logic_vector(15 downto 0);
 --------------------
 SIGNAL outCtrlSignals:  std_logic_vector(11 downto 0);
-SIGNAL ExecuteMemory:   std_logic_vector(65 downto 0);
+SIGNAL ExecuteMemory:   std_logic_vector(77 downto 0);
 SIGNAL OutportOutput:  std_logic_vector(15 downto 0);
 
 ----Signals from Forwarding unit
@@ -65,7 +65,7 @@ SIGNAL start	   :  std_logic;
 ----------------------------------------------------------
 SIGNAL CtrlSignals :  std_logic_vector(11 downto 0);
 SIGNAL decodedDstD : std_logic_vector(15 downto 0); --Decoded data required for branching and will be needed by fetch stage
-SIGNAL DecodeExecute:  std_logic_vector(55 downto 0);
+SIGNAL DecodeExecute:  std_logic_vector(67 downto 0);
 SIGNAL FetchDecodeOpcode:  std_logic_vector( 4 downto 0); --needed for branch unit
 
 --------------no idea where to get it  in fetch stage s
@@ -74,7 +74,7 @@ SIGNAL DECEXRET: std_logic;--control signal from decode stage bit 8
 SIGNAL EXECMEMRET:  std_logic;--control signal from execute stage bit 8
 
 -----------Signals for write back 
-SIGNAL WriteBack:  std_logic_vector(38 downto 0);
+SIGNAL WriteBack:  std_logic_vector(41 downto 0);
 SIGNAL outCtrlSignalsWB:std_logic_vector( 2 downto 0);
 -----------------------
 Signal ack:std_logic;
@@ -123,11 +123,14 @@ MemWBRdst<=RdstVal;
 ExMemSHorLDM<=ExecuteMemory(65);
 DecExSHorLDM<=DecodeExecute(55);
 
+outCtrlSignals<=  ExecuteMemory(77 downto 66);
+CtrlSignals<=DecodeExecute(67 downto 56);
+
 ExMemWBDst<=outCtrlSignals(0);
 ExMemWBSrc<=outCtrlSignals(1);
 DecExWBDst<=CtrlSignals(0);
 DecExWBSrc<=CtrlSignals(1);
-ExMemMemWrite    <=outCtrlSignals (3);
+ExMemMemWrite<=outCtrlSignals (3);
 DecExMemRead <=CtrlSignals (2);
 
 
@@ -140,13 +143,13 @@ DecExMemRead <=CtrlSignals (2);
 --Create an instance of forwarding unit
 
 
-ForwardingUnitt:entity work.ForwardingUnit port map(FetDecRsrc,FetDecRdst,DecExRsrc,DecExRdst,ExMemRsrc,ExMemRdst,MemWBRsrc,MemWBRdst,ExMemWBDst,ExMemWBSrc,ExMemMemWrite,DecExMemRead,DecExWBDst,DecExWBSrc,Branch,FetDecUSERsrc,FetDecUSERdst,DecExSHorLDM,ExMemSHorLDM,outCtrlSignalsWB,stall,x);
+ForwardingUnitt:entity work.ForwardingUnit port map(FetDecRsrc,FetDecRdst,DecExRsrc,DecExRdst,ExMemRsrc,ExMemRdst,MemWBRsrc,MemWBRdst,ExMemWBDst,ExMemWBSrc,ExMemMemWrite,DecExMemRead,DecExWBDst,DecExWBSrc,Branch,FetDecUSERsrc,FetDecUSERdst,DecExSHorLDM,ExMemSHorLDM,WriteBack(41 downto 39),stall,x);
 --Create instances for the stages of fetch- decode - execute -memory -wb stages
-FetchStage: entity work.FetchStage port map(clk,reset,int,Branch,rst,ret,Flush,DECEXRET,EXECMEMRET,x,ALUResult1,AlUResult2,MemoryData,WBSrcData,WBDstData,decodedDstData,pushIntrEn,start,FetchDecodeOutput,nextStageEn,FetDecUSERsrc,FetDecUSERdst);
-DecodeStage: entity work.DecodeStage port map(clk,reset,int,ack,Branch,updated,rst,FetchDecodeOutput,WriteBack,outCtrlSignalsWB,portInput,nextStageEn,CtrlSignals,decodedDstD,DecodeExecute,FetchDecodeOpcode,pushIntrEn,start,DECEXRET);
-ExecuteStage: entity work.ExecuteStage port map(clk,rst,stall,DecodeExecute,CtrlSignals,WBDstData,WBSrcData,WriteBack,x,FetchDecodeOpcode,outCtrlSignals,ExecuteMemory,OutportOutput,ALUResult1,AlUResult2,Branch,Flush,EXECMEMRET);
-MemoryStage:entity work.MemoryStage port map (clk,rst,ExecuteMemory(64 downto 0),WBDstData,outCtrlSignals,x,outCtrlSignalsMem,MemoryData,Address,WBSrcData,WBDstData,RsrcVal,RdstVal,intIndicator);
-WBStage:entity work.WBStage port map (clk,rst,outCtrlSignalsMem,WriteBack,WBSrcData,WBDstData,RsrcVal,RdstVal,intIndicator,outCtrlSignalsWB);
+FetchStage: entity work.FetchStage port map(clk,reset,int,Branch,rst,ret,Flush,DECEXRET,EXECMEMRET,x,ALUResult1,AlUResult2,MemoryData,WBSrcData,WBDstData,decodedDstData,pushIntrEn,start,FetchDecodeOutput,nextStageEn,FetDecUSERsrc,FetDecUSERdst,stall);
+DecodeStage: entity work.DecodeStage port map(clk,reset,int,ack,Branch,updated,rst,FetchDecodeOutput,WriteBack(38 downto 0),WriteBack(41 downto 39),portInput,nextStageEn,decodedDstD,DecodeExecute,FetchDecodeOpcode,pushIntrEn,start,DECEXRET);
+ExecuteStage: entity work.ExecuteStage port map(clk,rst,stall,DecodeExecute(55 downto 0),DecodeExecute(67 downto 56),WBDstData,WBSrcData,WriteBack(38 downto 0),x,FetchDecodeOpcode,ExecuteMemory,OutportOutput,ALUResult1,AlUResult2,Branch,Flush,EXECMEMRET);
+MemoryStage:entity work.MemoryStage port map (clk,rst,ExecuteMemory(64 downto 0),WBDstData,ExecuteMemory(77 downto 66),x,outCtrlSignalsMem,MemoryData,Address,WBSrcData,WBDstData,RsrcVal,RdstVal,intIndicator);
+WBStage:entity work.WBStage port map (clk,rst,outCtrlSignalsMem,WriteBack,WBSrcData,WBDstData,RsrcVal,RdstVal,intIndicator);
 --Declare signals for all connections (rabena m3aki :D :D)
 
 --After that Create a file for the interface of the processor with instruction memory and data memory as well as input port

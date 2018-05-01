@@ -25,8 +25,9 @@ fetchDecodeOpcode: in std_logic_vector(4 downto 0); --passed from decode stage f
 --Output represents execution results as well as ctrl signals
 
 
-outCtrlSignals: out std_logic_vector(11 downto 0);
-ExecuteMemory:  out std_logic_vector(65 downto 0);
+--outCtrlSignals: out std_logic_vector(11 downto 0);
+
+ExecuteMemory:  out std_logic_vector(77 downto 0);
 OutportOutput: out std_logic_vector(15 downto 0);
 
 
@@ -80,7 +81,7 @@ SIGNAL CALLRET         :std_logic_vector(1 downto 0); --10 call 01 ret
 SIGNAL WBB             :std_logic_vector(2 downto 0); -- src dst dst hazard
 
 Signal OutportInput	: std_logic_vector(15 downto 0);
-Signal ExMemIN          :  std_logic_vector(65 downto 0);
+Signal ExMemIN          :  std_logic_vector(77 downto 0);
 -----------------------
 --Signal  ALU
 Signal FlagsALU: std_logic_vector(3 downto 0);
@@ -234,7 +235,7 @@ else ALURES2;
 
 EXMEMEN<='1' when stall='0'
  else '0';
-ExMemIN<= ExMemSHorLDM & intIndicator &incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst   ;
+ExMemIN<= inCtrlSignals& ExMemSHorLDM & intIndicator &incrementedPC& ROUT& ALURES1 & RdstV & Rsrc & Rdst   ;
 ExecuteMemoryRegister: entity work.nbitRegister generic map(n=>66) port map(ExMemIN,rst,clk,EXMEMEN,ExecuteMemory);
 
 
@@ -246,7 +247,7 @@ BR<=branch;
 FlagRegister: entity work.nbitRegister generic map(n=>4) port map(FlagsReg,rst,clk,ALUEN,FlagsREGOUT);
 ---------------------------------------------
 
-outCtrlSignals<=inCtrlSignals;
+--outCtrlSignals <= ExecuteMemory(77 downto 66);
 EXECMEMRET<=inCtrlSignals(8);
 ExMemSHorLDM<='1' when opcode= SHLCOP or opcode= SHRCOP or opcode=LDMOP
 else '0';

@@ -39,7 +39,8 @@ nextStageEn: inout std_logic; --inout becuase i need to read its value---
 
 ------------------
 FetDecUSERsrc     : out std_logic;
-FetDecUSERdst     : out std_logic
+FetDecUSERdst     : out std_logic;
+stall:in std_logic
 
 );
 end entity;
@@ -114,7 +115,7 @@ IR:my_nDFF generic map (n=>16)port map(clk,irRst,'1',instrMemOut,IROut);
 count:Counter port map(countRst,countEn,clk,countOut);
 
 --- set pc en ---
-PCen<=not(flush or branch); -- check condition --
+PCen<=not(flush or branch or stall); -- check condition --
 Process(clk,IROut,countEn)
   begin
 --- IR output & setting for the fetch decode buffer ---

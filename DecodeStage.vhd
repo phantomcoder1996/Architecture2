@@ -27,9 +27,9 @@ nextStageEn: in std_logic;
 
 --Output represents decoding results and control signals
 ----------------------------------------------------------
-CtrlSignals : out std_logic_vector(11 downto 0);
+--CtrlSignals : out std_logic_vector(11 downto 0);
 decodedDstD : out std_logic_vector(15 downto 0); --Decoded data required for branching and will be needed by fetch stage
-DecodeExecute: out std_logic_vector(55 downto 0);
+DecodeExecute: out std_logic_vector(67 downto 0);
 
 FetchDecodeOpcode: out std_logic_vector( 4 downto 0); --needed for branch unit
 
@@ -55,7 +55,7 @@ Signal decodedSrcData	  :std_logic_vector(15 downto 0);
 Signal decodedDstData	  :std_logic_vector(15 downto 0);
 Signal decodedCtrlSignals :std_logic_vector(11 downto 0);
 Signal rdstV_port	  :std_logic_vector(15 downto 0);
-Signal DecodeExecuteIn	  :std_logic_vector(55 downto 0);
+Signal DecodeExecuteIn	  :std_logic_vector(67 downto 0);
 
 Signal DecExEn		  :std_logic;
 
@@ -137,6 +137,7 @@ rdstv_port	<= portInput when inInst='1' else decodedDstData;
 
 --Decode Execute Register mapping
 ----------------------------------
+DecodeExecuteIn(67 downto 56)<=decodedCtrlSignals;
  DecodeExecuteIn(55)<=DecExSHorLDM;
  DecodeExecuteIn(54)		<= '1'; --I dont know what this signal is used for
  DecodeExecuteIn(53)	        <= '1' when int='1' else '0';
@@ -150,8 +151,8 @@ rdstv_port	<= portInput when inInst='1' else decodedDstData;
  DecExEn <= not nextStageEn; --Temporarily until I receive a signal from fetch stage
 
  DecodeExecuteRegister: entity work.nbitRegister generic map(n=>71) port map(DecodeExecuteIn,rst,clk,DecExEn,DecodeExecute);
-
- CtrlSignals<= decodedCtrlSignals;
+--CtrlSignals <= DecodeExecute(67 downto 56);
+ --CtrlSignals<= decodedCtrlSignals;
  DECEXRET<=decodedCtrlSignals(8);
 
 
