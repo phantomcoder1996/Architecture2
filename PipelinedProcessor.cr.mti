@@ -1,4 +1,14 @@
-C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/register.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/register.vhd
+C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/MemoryStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\MemoryStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity MemoryStage
+-- Compiling architecture MemoryStageArch of MemoryStage
+
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/register.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\register.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,7 +16,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity nbitregister
 -- Compiling architecture nbitregister_architecture of nbitregister
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/PCContoller.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/PCContoller.vhd
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/PCContoller.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\PCContoller.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -14,14 +24,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading package NUMERIC_STD
 -- Compiling entity PCController
 -- Compiling architecture PCControllerArch of PCController
-
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/MemoryStage.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/MemoryStage.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity MemoryStage
--- Compiling architecture MemoryStageArch of MemoryStage
 
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/BranchUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/BranchUnit.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -40,15 +42,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity decoder
 -- Compiling architecture decoderArchitecture of decoder
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/WriteBackStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\WriteBackStage.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity WBStage
--- Compiling architecture WBStageArch of WBStage
-
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ExecutionStage.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ExecutionStage.vhd
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ExecutionStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\ExecutionStage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -59,7 +53,17 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading entity nbitregisterf
 -- Loading package NUMERIC_STD
 -- Loading entity ALU
+-- Loading entity nbitregister
 -- Loading entity BranchUnit
+
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/WriteBackStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\WriteBackStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity WBStage
+-- Compiling architecture WBStageArch of WBStage
+-- Loading entity nbitregister
 
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/FallingEdgeReg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/FallingEdgeReg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -77,7 +81,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity ControlUnit
 -- Compiling architecture ControlUnitArch of ControlUnit
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\ALU.vhd}
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ALU.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -86,7 +90,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity ALU
 -- Compiling architecture ALUArch of ALU
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/mux2.vhd
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\mux2.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -94,7 +98,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity Mux2
 -- Compiling architecture Mux2Arch of Mux2
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/FetchStage.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/FetchStage.vhd
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/FetchStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\FetchStage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -122,6 +126,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity RegisterFile
 -- Compiling architecture RegisterFileArch of RegisterFile
 
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/Processor.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/Processor.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity processor
+-- Compiling architecture processorArch of processor
+-- Loading entity ForwardingUnit
+-- Loading entity FetchStage
+-- Loading entity DecodeStage
+-- Loading entity ExecuteStage
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity MemoryStage
+-- Loading entity WBStage
+-- Loading entity nbitregister
+
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/DecodeStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\DecodeStage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
@@ -134,19 +155,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading entity ControlUnit
 -- Loading entity nbitregister
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
-** Error (suppressible): C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd(2): (vcom-1491) Empty source files.
-
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/Processor.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/Processor.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity processor
--- Compiling architecture processorArch of processor
-
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ram.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
@@ -156,13 +164,10 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity ram
 -- Compiling architecture syncrama of ram
 
-} {} {}} R:/Architecture2/BranchUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/BranchUnit.vhd
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity BranchUnit
--- Compiling architecture BranchUnitArch of BranchUnit
+** Error (suppressible): C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd(2): (vcom-1491) Empty source files.
 
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/outPortController.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/outPortController.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -179,31 +184,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading package std_logic_1164
 -- Compiling entity tristateBuffer
 -- Compiling architecture arcTristate of tristateBuffer
-
-} {} {}} R:/Architecture2/DecodeStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/DecodeStage.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity DecodeStage
--- Compiling architecture DecodeStageArch of DecodeStage
--- Loading package NUMERIC_STD
--- Loading entity RegisterFile
--- Loading entity ControlUnit
--- Loading entity nbitregister
-
-} {} {}} R:/Architecture2/ExecutionStage.vhd {1 {vcom -work work -2002 -explicit -stats=none R:/Architecture2/ExecutionStage.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity ExecuteStage
--- Compiling architecture ExecuteStageArch of ExecuteStage
--- Loading entity outPortController
--- Loading entity nbitregisterf
--- Loading package NUMERIC_STD
--- Loading entity ALU
--- Loading entity BranchUnit
 
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ForwardingUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ForwardingUnit.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017

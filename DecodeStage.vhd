@@ -22,23 +22,25 @@ WriteBackCtrlSignals: in std_logic_vector(2 downto 0);
 
 PortInput	: in std_logic_vector(15 downto 0);
 
-
+nextStageEn: in std_logic;
  
 
 --Output represents decoding results and control signals
 ----------------------------------------------------------
-CtrlSignals : out std_logic_vector(15 downto 0);
+--CtrlSignals : out std_logic_vector(11 downto 0);
 decodedDstD : out std_logic_vector(15 downto 0); --Decoded data required for branching and will be needed by fetch stage
-DecodeExecute: out std_logic_vector(54 downto 0);
+DecodeExecute: out std_logic_vector(66 downto 0);
 
 FetchDecodeOpcode: out std_logic_vector( 4 downto 0); --needed for branch unit
+
 
 --Output from control unit
 --------------------------
  pushIntrEn: out std_logic;
- start	   : out std_logic
+ start	   : out std_logic;
 
-
+------output for flushing 
+DECEXRET:out std_logic
 
 );
 
@@ -52,9 +54,13 @@ Architecture DecodeStageArch of DecodeStage is
 --------------------------------
 Signal decodedSrcData	  :std_logic_vector(15 downto 0);
 Signal decodedDstData	  :std_logic_vector(15 downto 0);
-Signal decodedCtrlSignals :std_logic_vector(15 downto 0);
+
+Signal decodedCtrlSignals :std_logic_vector(10 downto 0);
+
 Signal rdstV_port	  :std_logic_vector(15 downto 0);
-Signal DecodeExecuteIn	  :std_logic_vector(54 downto 0);
+
+Signal DecodeExecuteIn	  :std_logic_vector(66 downto 0);
+Signal DecodeExecuteOut	  :std_logic_vector(66 downto 0);
 
 Signal DecExEn		  :std_logic;
 
@@ -84,6 +90,8 @@ Signal Wsrc:		 std_logic;
 Signal Wdst:	         std_logic;
 
 
+---------------------------
+Signal DecExSHorLDM	  : std_logic;
 
 
 
@@ -100,8 +108,8 @@ RsrcData	<= 	WriteBack(38 downto 23);
 RdstData	<= 	WriteBack(22 downto 7);
 WBRSrc		<= 	WriteBack(6 downto 4);
 WBRdst		<= 	WriteBack(3 downto 1);
-wsrc		<=	WriteBackCtrlSignals(2);
-wdst		<=      WriteBackCtrlSignals(1);
+wsrc		<=	WriteBackCtrlSignals(1);
+wdst		<=      WriteBackCtrlSignals(0);
 --TODO: change wsrc and wdst to match those of wb stage
 
 
@@ -135,6 +143,8 @@ rdstv_port	<= portInput when inInst='1' else decodedDstData;
 
 --Decode Execute Register mapping
 ----------------------------------
+DecodeExecuteIn(66 downto 56)<=decodedCtrlSignals;
+ DecodeExecuteIn(55)<=DecExSHorLDM;
  DecodeExecuteIn(54)		<= '1'; --I dont know what this signal is used for
  DecodeExecuteIn(53)	        <= '1' when int='1' else '0';
  DecodeExecuteIn(52 downto 43)	<= incrementedPC;
@@ -144,10 +154,20 @@ rdstv_port	<= portInput when inInst='1' else decodedDstData;
  DecodeExecuteIn(7 downto 5)    <= Rdst;
  DecodeExecuteIn(4 downto 0)    <= opcode;
 
- DecExEn <= '1'; --Temporarily until I receive a signal from fetch stage
+ DecExEn <= not nextStageEn; --Temporarily until I receive a signal from fetch stage
 
- DecodeExecuteRegister: entity work.nbitRegister generic map(n=>71) port map(DecodeExecuteIn,rst,clk,DecExEn,DecodeExecute);
-
- CtrlSignals<= decodedCtrlSignals;
+ DecodeExecuteRegister: entity work.nbitRegister generic map(n=>67) port map(DecodeExecuteIn,rst,clk,DecExEn,DecodeExecuteout);
+--CtrlSignals <= DecodeExecute(67 downto 56);
+ --CtrlSignals<= decodedCtrlSignals;
  
+DECEXRET<=DecodeExecuteout(64); --TODO:REVISE THA
+DecodeExecute<=DecodeExecuteOut;
+
+
+
+ 
+
+DecExSHorLDM<='1' when opcode="11100" or opcode="01010" or opcode="01001"
+else '0';
+
 end DecodeStageArch;

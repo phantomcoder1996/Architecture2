@@ -73,6 +73,7 @@ else '0';
 x(0) <= '1' when ExMemRdst=DecExRsrc and ExMemWBDst='1'
 else '0';
 
+
 x(1) <= '1' when ExMemRdst=DecExRdst and ExMemWBDst='1' and DecExSHorLDM='0'
 else '0';
 
@@ -95,6 +96,7 @@ else '0';
 ------------------
 
 x(6) <='1';
+
 
 x(7) <= '1' when MemWBRdst=DecExRsrc and MemWBWBDst='1' and x(0)='0' 
 else '0';

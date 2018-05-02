@@ -12,6 +12,8 @@ rst   :in std_logic; --external signal to set all registers to 0
 --PCen  :in std_logic; --external signal from branch unit required for flushing
 ret   :in std_logic; --Signal from execute memory stage to indicate ret or reti
 flush :in std_logic; --Signal from branch unit
+DECEXRET:in std_logic;--control signal from decode stage bit 8
+EXECMEMRET: in std_logic;--control signal from execute stage bit 8
 
 --Data and signals required from early branching
 ------------------------------------------------
@@ -23,13 +25,22 @@ WBSrcData  : in std_logic_vector(15 downto 0); --Output of multiplexer in Memory
 WBDstData  : in std_logic_vector(15 downto 0); --Output of multiplexer in Memory Stage
 
 decodedDstData: in std_logic_vector(15 downto 0); --is one of outputs of decoding stage
-
+--from control unit to be used in interrupt----------------
+ pushIntrEn: in std_logic; 
+ start	   : in  std_logic;
+--------------------
 ---instructionMemoryDataIn: in std_logic_vector(15 downto 0);-- needed for what !!! --
 --Output represents fetch decode register values required for the decoding stage
 
 ---InstructionMemoryAddressOut: out std_logic_vector(9 downto 0); -- needed for what !!! --
 FetchDecodeOutput: out std_logic_vector(36 downto 0);
-nextStageEn: inout std_logic --inout becuase i need to read its value---
+nextStageEn: inout std_logic; --inout becuase i need to read its value---
+
+
+------------------
+FetDecUSERsrc     : out std_logic;
+FetDecUSERdst     : out std_logic;
+stall:in std_logic
 
 );
 end entity;
@@ -88,6 +99,7 @@ begin
 
 
 
+
 --PC Controller circuit is responsible for loading PC with correct Value
 -------------------------------------------------------------------------
 PC          	: entity work.nbitregister generic map(n=>10) port map(pcinput,rst,clk,PCen,pcoutput);
@@ -102,7 +114,7 @@ IR:my_nDFF generic map (n=>16)port map(clk,irRst,'1',instrMemOut,IROut);
 count:Counter port map(countRst,countEn,clk,countOut);
 
 --- set pc en ---
-PCen<=not(flush or branch); -- check condition --
+PCen<=not( stall); -- check condition --
 Process(clk,IROut,countEn)
   begin
 --- IR output & setting for the fetch decode buffer ---
@@ -110,7 +122,13 @@ Process(clk,IROut,countEn)
 irRst<=branch or flush;
 Rsrc<=IROut(10 downto 8);
 Rdst<=IROut(8 downto 6);
-opCode<=IROut(15 downto 11);
+
+
+if (branch='0' and  DECEXRET='0' and EXECMEMRET='0' ) then
+opCode<=IROut(15 downto 11) ;
+else 
+opCode<="00000"; --no-operation
+end if;
 
 --TODO : Handle instructions that shall be loaded on two times
 --These are LDM - LDD - SHL -SHR - STD
@@ -131,6 +149,9 @@ end if;
 --TODO:Create Fetch decode Register of 37 bits and map its output to fetch decode output in entity declararation
 if(rising_edge(clk))then 
 FetchDecodeOutput(36 downto 0)<= pcinput & opcode & Rsrc & Rdst & Imm;
+FetDecUSERsrc<=instrMemOut(1);
+FetDecUSERdst<=instrMemOut(2);
+
 end if;
 
 --Set T and interrupt indicator in decodeexecute register mapping section in DEcode Stage.vhdl

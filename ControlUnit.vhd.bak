@@ -12,7 +12,7 @@ updated:in std_logic;
 clk:in std_logic;
 
 --- outputs ---
-CtrlSignals: out std_logic_vector(15 downto 0);
+CtrlSignals: out std_logic_vector(11 downto 0);
 pushIntrEn:out std_logic;
 start: out std_logic
 );
@@ -30,7 +30,7 @@ component ROM is
         clk:in std_logic;
         en:in std_logic;
         address:in std_logic_vector(4 downto 0);
-        output:out std_logic_vector(15 downto 0)
+        output:out std_logic_vector(11 downto 0)
   );
   
 end component;
