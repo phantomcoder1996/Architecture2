@@ -51,8 +51,8 @@ Architecture FetchStageArch of FetchStage is
 
 
 Signal pcinput:	         std_logic_vector(9 downto 0);
-Signal pcoutput:         std_logic_vector(9 downto 0);
-Signal PCen:             std_logic;
+Signal pcoutput,IMadd:         std_logic_vector(9 downto 0);
+Signal PCen,intS:             std_logic;
 Signal instrMemOut:      std_logic_vector(15 downto 0);
 Signal irRst:            std_logic;
 Signal IROut:            std_logic_vector(15 downto 0);
@@ -78,7 +78,15 @@ PORT( Clk,Rst,enb : IN std_logic; -- buf to enable tristate -- en -- to enable r
 		   q : INOUT std_logic_vector(n-1 DOWNTO 0));
 		
 END component;
+COMPONENT nbitregister is
+Generic(n: integer:=32);
+Port(d : in std_logic_vector(n-1 downto 0);
+     rst: in std_logic;
+     clk: in std_logic;
+     En: in std_logic;
+    q : out std_logic_vector(n-1 downto 0));
 
+end component;
 component Counter IS 
   PORT(
     
@@ -98,15 +106,19 @@ component Counter IS
 begin
 
 
-
+--prepare memory data for int or reset logic 
+IMadd<="0000000000" when reset='1'
+else "0000000001" when int ='1'
+else pcoutput;
 
 --PC Controller circuit is responsible for loading PC with correct Value
 -------------------------------------------------------------------------
 PC          	: entity work.nbitregister generic map(n=>10) port map(pcinput,rst,clk,PCen,pcoutput);
-PCController	: entity work.PCController port map(x,int,ret,reset,branch,pcoutput,decodedDstData,ALUResult1,ALUResult2,MemoryData,WBSrcData ,WBDstData,pcinput);
+PCController	: entity work.PCController port map(x,int,ret,reset,branch,pcoutput,decodedDstData,ALUResult1,ALUResult2,instrMemOut,WBSrcData ,WBDstData,pcinput);
 --- instruction memory and IR register ---
 ------------------------------------------
-IM:instrMemory port map (clk,pcoutput,instrMemOut);
+--IM:instrMemory port map (clk,pcoutput,instrMemOut);
+IM:instrMemory port map (clk,IMadd,instrMemOut);
 IR:my_nDFF generic map (n=>16)port map(clk,irRst,'1',instrMemOut,IROut);
   
 --- 1 bit counter needed in getting EA/Imm ---
@@ -120,11 +132,25 @@ Process(clk,IROut,countEn)
 --- IR output & setting for the fetch decode buffer ---
 -------------------------------------------------------
 irRst<=branch or flush;
+if(int='1') then
+Rsrc<= "110"; -- R6 # 
+Rdst<="111"; -- R7 # 
+intS<='1'; --used in interr cond--
+elsif(intS='1' and start='0') then
+Rsrc<= "000"; -- load no op
+Rdst<="000"; 
+intS<='0';
+else
 Rsrc<=IROut(10 downto 8);
-Rdst<=IROut(8 downto 6);
+Rdst<=IROut(8 downto 6);  
+intS<='0';
+end if;
 
-
-if (branch='0' and  DECEXRET='0' and EXECMEMRET='0' ) then
+if (int='1')then --in the interrupt case i need to load push inst
+opCode<="01101";
+elsif(intS='1' and start='0')then
+opCode<="00000"; --no-operation
+elsif (branch='0' and  DECEXRET='0' and EXECMEMRET='0' ) then
 opCode<=IROut(15 downto 11) ;
 else 
 opCode<="00000"; --no-operation

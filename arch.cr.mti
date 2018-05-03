@@ -1,0 +1,163 @@
+H:/Third_Year/Second_Sem/Arch/Architecture2/PCContoller.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/PCContoller.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/MemoryStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/MemoryStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/mux4.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux4.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/decoder.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/decoder.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/FetchStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FetchStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/counter.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/counter.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/dff.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/dff.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ControlUnit.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ControlUnit.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/tristatebuffer.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/tristatebuffer.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ALU.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ALU.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ForwardingUnit.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ForwardingUnit.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/register.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/register.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ROM.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ROM.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/BranchUnit.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/BranchUnit.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile2.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile2.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/WriteBackStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/WriteBackStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ram.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ram.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/Processor.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/Processor.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/InterruptHandlingModule.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InterruptHandlingModule.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/DecodeStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/DecodeStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ExecutionStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ExecutionStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/FallingEdgeReg.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FallingEdgeReg.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/outPortController.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/outPortController.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/instrMemory.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/instrMemory.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/InstructionMemory.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InstructionMemory.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/mux2.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux2.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-42) Unsupported ModelSim library format for "H:/Third_Year/Second_Sem/Arch/Architecture2/work". (Format: 4)
+
+** Error: VHDL Compiler exiting
+
+} {3.0 4.0 5.0 6.0} {}}

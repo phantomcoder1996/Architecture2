@@ -1,0 +1,310 @@
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/WriteBackStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ALU.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/BranchUnit.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ControlUnit.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/decoder.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/DecodeStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ExecutionStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FallingEdgeReg.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FetchStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ForwardingUnit.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InstructionMemory.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InterruptHandlingModule.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/MemoryStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux4.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/outPortController.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/PCContoller.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/Processor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ram.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/register.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/tristatebuffer.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# 22 compiles, 22 failed with 22 errors. 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/WriteBackStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ALU.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/BranchUnit.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ControlUnit.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/decoder.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/DecodeStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ExecutionStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FallingEdgeReg.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FetchStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ForwardingUnit.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InstructionMemory.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InterruptHandlingModule.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/MemoryStage.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux4.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/outPortController.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/PCContoller.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/Processor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ram.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/register.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/tristatebuffer.vhd
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# ** Error: (vcom-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# 
+# 
+# 22 compiles, 22 failed with 22 errors. 

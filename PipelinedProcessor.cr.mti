@@ -1,4 +1,34 @@
-C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/MemoryStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\MemoryStage.vhd}
+H:/Third_Year/Second_Sem/Arch/Architecture2/PCContoller.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/PCContoller.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/MemoryStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/MemoryStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/mux4.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux4.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/FetchStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FetchStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/decoder.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/decoder.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/MemoryStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\MemoryStage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -42,7 +72,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity decoder
 -- Compiling architecture decoderArchitecture of decoder
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ExecutionStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\ExecutionStage.vhd}
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ControlUnit.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ControlUnit.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ExecutionStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\ExecutionStage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -73,7 +109,19 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity nbitregisterf
 -- Compiling architecture nbitregister_architecture of nbitregisterf
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ControlUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\ControlUnit.vhd}
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/tristatebuffer.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/tristatebuffer.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ALU.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ALU.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ControlUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\ControlUnit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -81,7 +129,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity ControlUnit
 -- Compiling architecture ControlUnitArch of ControlUnit
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ALU.vhd
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ForwardingUnit.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ForwardingUnit.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ALU.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -90,13 +144,39 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity ALU
 -- Compiling architecture ALUArch of ALU
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\mux2.vhd}
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/register.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/register.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/mux2.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\mux2.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Compiling entity Mux2
 -- Compiling architecture Mux2Arch of Mux2
+
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/BranchUnit.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/BranchUnit.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile2.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/RegisterFile2.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/mux4.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\mux4.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Mux4
+-- Compiling architecture Mux4Arch of Mux4
 
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/FetchStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\FetchStage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -109,15 +189,49 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading package NUMERIC_STD
 -- Loading entity PCController
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/mux4.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\mux4.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity Mux4
--- Compiling architecture Mux4Arch of Mux4
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ram.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ram.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/RegisterFile2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/RegisterFile2.vhd
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/Processor.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/Processor.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/InterruptHandlingModule.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InterruptHandlingModule.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/FallingEdgeReg.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/FallingEdgeReg.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/ExecutionStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/ExecutionStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/DecodeStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/DecodeStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/WriteBackStage.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/WriteBackStage.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/RegisterFile2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/RegisterFile2.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -125,6 +239,38 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading package NUMERIC_STD
 -- Compiling entity RegisterFile
 -- Compiling architecture RegisterFileArch of RegisterFile
+
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/outPortController.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/outPortController.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+** Error (suppressible): C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd(2): (vcom-1491) Empty source files.
+
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ram
+-- Compiling architecture syncrama of ram
+
+} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/DecodeStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\DecodeStage.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity DecodeStage
+-- Compiling architecture DecodeStageArch of DecodeStage
+-- Loading package NUMERIC_STD
+-- Loading entity RegisterFile
+-- Loading entity ControlUnit
+-- Loading entity nbitregister
 
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/Processor.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/Processor.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -143,32 +289,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading entity WBStage
 -- Loading entity nbitregister
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/DecodeStage.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Univ\Documents\Architecture2\PipelinedProcessor\DecodeStage.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity DecodeStage
--- Compiling architecture DecodeStageArch of DecodeStage
--- Loading package NUMERIC_STD
--- Loading entity RegisterFile
--- Loading entity ControlUnit
--- Loading entity nbitregister
-
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ram.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ram
--- Compiling architecture syncrama of ram
-
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
-** Error (suppressible): C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InterruptHandlingModule.vhd(2): (vcom-1491) Empty source files.
-
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/outPortController.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/outPortController.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
@@ -177,13 +297,30 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Compiling entity outPortController
 -- Compiling architecture outPortControllerArch of outPortController
 
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/tristatebuffer.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/tristatebuffer.vhd
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/InstructionMemory.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/InstructionMemory.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/tristatebuffer.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/tristatebuffer.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Compiling entity tristateBuffer
 -- Compiling architecture arcTristate of tristateBuffer
+
+} {} {}} H:/Third_Year/Second_Sem/Arch/Architecture2/mux2.vhd {0 {vcom -work work -2002 -explicit H:/Third_Year/Second_Sem/Arch/Architecture2/mux2.vhd
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InstructionMemory.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InstructionMemory.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+** Error (suppressible): C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InstructionMemory.vhd(2): (vcom-1491) Empty source files.
 
 } {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ForwardingUnit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/ForwardingUnit.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
@@ -192,10 +329,5 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 2
 -- Loading package std_logic_1164
 -- Compiling entity ForwardingUnit
 -- Compiling architecture ForwardingUnitArch of ForwardingUnit
-
-} {} {}} C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InstructionMemory.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InstructionMemory.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
--- Loading package STANDARD
-** Error (suppressible): C:/Users/Univ/Documents/Architecture2/PipelinedProcessor/InstructionMemory.vhd(2): (vcom-1491) Empty source files.
 
 } {} {}}
